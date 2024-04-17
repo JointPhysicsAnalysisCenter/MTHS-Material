@@ -1,0 +1,834 @@
+%%%%%   Standard symbols for use in BABAR papers and BAD Notes
+%%%%%
+%%%%%   Revised   05/22/01 P. Dauncey     Added \hepex, etc. and clean up a bit
+%%%%%   Revised   12/07/00 D. Hitlin      Added features of D. Kirkby's HEP.sty
+%%%%%   Revised   07/13/00 R. Waldi       Corrected \Kbar, \Bbar ... macros
+%%%%%   Revised   07/13/00 D. MacFarlane  Replaced incorrect \chic1 symbols
+%%%%%   Revised   07/05/00 P. Dauncey     Added \mes, \mec, removed \O
+%%%%%   Revised   07/04/00 D. MacFarlane  Added scalable version of BABAR
+%%%%%   Revised   07/01/00 D. MacFarlane
+%%%%%   Revised   06/21/00 D. Hitlin
+%%%%%   Original  06/10/00 D. Hitlin
+%%%%%   Revision of TDR and Physics Book symbol file
+%%%%%
+
+\RequirePackage{xspace}
+
+%%%%%%%%%%%%%%%%%%%% BABAR ... THE NAME OF THE COLLABORATION %%%%
+
+% Huge boldface
+\def\hbabar{\mbox{{\huge\bf\sl B}\hspace{-0.1em}{\LARGE\bf\sl A}\hspace{-0.03em}{\huge\bf\sl B}\hspace{-0.1em}{\LARGE\bf\sl A\hspace{-0.03em}R}}}
+% LARGE
+\def\Lbabar{\mbox{{\LARGE\sl B}\hspace{-0.15em}{\Large\sl A}\hspace{-0.07em}{\LARGE\sl B}\hspace{-0.15em}{\Large\sl A\hspace{-0.02em}R}}}
+% Large
+\def\lbabar{\mbox{{\large\sl B}\hspace{-0.4em} {\normalsize\sl A}\hspace{-0.03em}{\large\sl B}\hspace{-0.4em} {\normalsize\sl A\hspace{-0.02em}R}}}
+% normal size
+%\def\babar{\mbox{\sl B\hspace{-0.4em} {\small\sl A}\hspace{-0.37em} \sl B\hspace{-0.4em} {\small\sl A\hspace{-0.02em}R}}}
+% replace normalsize with scalable version       dbm 7/4/00
+\usepackage{relsize}
+\def\babar{\mbox{\slshape B\kern-0.1em{\smaller A}\kern-0.1em
+    B\kern-0.1em{\smaller A\kern-0.2em R}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%   LEPTONS   %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\emi\en
+\def\electron   {\ensuremath{e}\xspace}
+\def\en         {\ensuremath{e^-}\xspace}   % electron negative (\em is taken)
+\def\ep         {\ensuremath{e^+}\xspace}
+\def\epm        {\ensuremath{e^\pm}\xspace} 
+\def\epem       {\ensuremath{e^+e^-}\xspace}
+%\def\ee         {\ensuremath{e^-e^-}\xspace}
+
+\def\mmu        {\ensuremath{\mu}\xspace}
+\def\mup        {\ensuremath{\mu^+}\xspace}
+\def\mun        {\ensuremath{\mu^-}\xspace} % muon negative (\mum is taken)
+\def\mumu       {\ensuremath{\mu^+\mu^-}\xspace}
+\def\mtau       {\ensuremath{\tau}\xspace}
+
+\def\taup       {\ensuremath{\tau^+}\xspace}
+\def\taum       {\ensuremath{\tau^-}\xspace}
+\def\tautau     {\ensuremath{\tau^+\tau^-}\xspace}
+
+\def\ellm       {\ensuremath{\ell^-}\xspace}
+\def\ellp       {\ensuremath{\ell^+}\xspace}
+\def\ellell     {\ensuremath{\ell^+ \ell^-}\xspace}
+
+\def\nub        {\ensuremath{\overline{\nu}}\xspace}
+\def\nunub      {\ensuremath{\nu{\overline{\nu}}}\xspace}
+\def\nub        {\ensuremath{\overline{\nu}}\xspace}
+\def\nunub      {\ensuremath{\nu{\overline{\nu}}}\xspace}
+\def\nue        {\ensuremath{\nu_e}\xspace}
+\def\nueb       {\ensuremath{\nub_e}\xspace}
+\def\nuenueb    {\ensuremath{\nue\nueb}\xspace}
+\def\num        {\ensuremath{\nu_\mu}\xspace}
+\def\numb       {\ensuremath{\nub_\mu}\xspace}
+\def\numnumb    {\ensuremath{\num\numb}\xspace}
+\def\nut        {\ensuremath{\nu_\tau}\xspace}
+\def\nutb       {\ensuremath{\nub_\tau}\xspace}
+\def\nutnutb    {\ensuremath{\nut\nutb}\xspace}
+\def\nul        {\ensuremath{\nu_\ell}\xspace}
+\def\nulb       {\ensuremath{\nub_\ell}\xspace}
+\def\nulnulb    {\ensuremath{\nul\nulb}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%  PHOTONS  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\g     {\ensuremath{\gamma}\xspace}
+\def\gaga  {\ensuremath{\gamma\gamma}\xspace}  %% changed from \gg, which is >>
+\def\ggstar{\ensuremath{\gamma\gamma^*}\xspace}
+
+\def\ega    {\ensuremath{e\gamma}\xspace}
+\def\game   {\ensuremath{\gamma e^-}\xspace}
+\def\epemg  {\ensuremath{e^+e^-\gamma}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Other GAUGE BOSONS  %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\H      {\ensuremath{H^0}\xspace}
+\def\Hp     {\ensuremath{H^+}\xspace}
+\def\Hm     {\ensuremath{H^-}\xspace}
+\def\Hpm    {\ensuremath{H^\pm}\xspace}
+\def\W      {\ensuremath{W}\xspace}
+\def\Wp     {\ensuremath{W^+}\xspace}
+\def\Wm     {\ensuremath{W^-}\xspace}
+\def\Wpm    {\ensuremath{W^\pm}\xspace}
+\def\Z      {\ensuremath{Z^0}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%   QUARKS   %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\q     {\ensuremath{q}\xspace}
+\def\qbar  {\ensuremath{\overline q}\xspace}
+\def\qqbar {\ensuremath{q\overline q}\xspace}
+\def\u     {\ensuremath{u}\xspace}
+\def\ubar  {\ensuremath{\overline u}\xspace}
+\def\uubar {\ensuremath{u\overline u}\xspace}
+\def\d     {\ensuremath{d}\xspace}
+\def\dbar  {\ensuremath{\overline d}\xspace}
+\def\ddbar {\ensuremath{d\overline d}\xspace}
+\def\s     {\ensuremath{s}\xspace}
+\def\sbar  {\ensuremath{\overline s}\xspace}
+\def\ssbar {\ensuremath{s\overline s}\xspace}
+\def\c     {\ensuremath{c}\xspace}
+\def\cbar  {\ensuremath{\overline c}\xspace}
+\def\ccbar {\ensuremath{c\overline c}\xspace}
+\def\b     {\ensuremath{b}\xspace}
+\def\bbar  {\ensuremath{\overline b}\xspace}
+\def\bbbar {\ensuremath{b\overline b}\xspace}
+\def\t     {\ensuremath{t}\xspace}
+\def\tbar  {\ensuremath{\overline t}\xspace}
+\def\tbar  {\ensuremath{\overline t}\xspace}
+\def\ttbar {\ensuremath{t\overline t}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% LIGHT MESONS  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\piz   {\ensuremath{\pi^0}\xspace}
+\def\pizs  {\ensuremath{\pi^0\mbox\,\rm{s}}\xspace}
+\def\ppz   {\ensuremath{\pi^0\pi^0}\xspace}
+\def\pip   {\ensuremath{\pi^+}\xspace}
+\def\pim   {\ensuremath{\pi^-}\xspace}
+\def\pipi  {\ensuremath{\pi^+\pi^-}\xspace}
+\def\pipm  {\ensuremath{\pi^\pm}\xspace}
+\def\pimp  {\ensuremath{\pi^\mp}\xspace}
+
+\def\kaon  {\ensuremath{K}\xspace}
+%%% do NOT use ensuremath here
+\def\Kbar  {\kern 0.2em\bar{\kern -0.2em K}{}\xspace}
+\def\Kb    {\ensuremath{\Kbar}\xspace}
+\def\Kz    {\ensuremath{K^0}\xspace}
+\def\Kzb   {\ensuremath{\Kbar^0}\xspace}
+\def\KzKzb {\ensuremath{\Kz \kern -0.16em \Kzb}\xspace}
+\def\Kp    {\ensuremath{K^+}\xspace}
+\def\Km    {\ensuremath{K^-}\xspace}
+\def\Kpm   {\ensuremath{K^\pm}\xspace}
+\def\Kmp   {\ensuremath{K^\mp}\xspace}
+\def\KpKm  {\ensuremath{\Kp \kern -0.16em \Km}\xspace}
+\def\KS    {\ensuremath{K^0_{\scriptscriptstyle S}}\xspace} 
+\def\KL    {\ensuremath{K^0_{\scriptscriptstyle L}}\xspace} 
+\def\Kstarz  {\ensuremath{K^{*0}}\xspace}
+\def\Kstarzb {\ensuremath{\Kbar^{*0}}\xspace}
+\def\Kstar   {\ensuremath{K^*}\xspace}
+\def\Kstarb  {\ensuremath{\Kbar^*}\xspace}
+\def\Kstarp  {\ensuremath{K^{*+}}\xspace}
+\def\Kstarm  {\ensuremath{K^{*-}}\xspace}
+\def\Kstarpm {\ensuremath{K^{*\pm}}\xspace}
+\def\Kstarmp {\ensuremath{K^{*\mp}}\xspace}
+
+\def\rhopm  {\ensuremath{\rho^\pm}\xspace}
+
+
+\newcommand{\etapr}{\ensuremath{\eta^{\prime}}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% HEAVY MESONS  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% do NOT use ensuremath here
+\def\Dbar    {\kern 0.2em\overline{\kern -0.2em D}{}\xspace}
+\def\Db      {\ensuremath{\Dbar}\xspace}
+\def\Dz      {\ensuremath{D^0}\xspace}
+\def\Dzb     {\ensuremath{\Dbar^0}\xspace}
+\def\DzDzb   {\ensuremath{\Dz {\kern -0.16em \Dzb}}\xspace}
+\def\Dp      {\ensuremath{D^+}\xspace}
+\def\Dm      {\ensuremath{D^-}\xspace}
+\def\Dpm     {\ensuremath{D^\pm}\xspace}
+\def\Dmp     {\ensuremath{D^\mp}\xspace}
+\def\DpDm    {\ensuremath{\Dp {\kern -0.16em \Dm}}\xspace}
+\def\Dstar   {\ensuremath{D^*}\xspace}
+\def\Dstarb  {\ensuremath{\Dbar^*}\xspace}
+\def\Dstarz  {\ensuremath{D^{*0}}\xspace}
+\def\Dstarzb {\ensuremath{\Dbar^{*0}}\xspace}
+\def\Dstarp  {\ensuremath{D^{*+}}\xspace}
+\def\Dstarm  {\ensuremath{D^{*-}}\xspace}
+\def\Dstarpm {\ensuremath{D^{*\pm}}\xspace}
+\def\Dstarmp {\ensuremath{D^{*\mp}}\xspace}
+\def\Ds      {\ensuremath{D^+_s}\xspace}
+\def\Dsb     {\ensuremath{\Dbar^+_s}\xspace}
+\def\Dss     {\ensuremath{D^{*+}_s}\xspace}
+
+% Obsolete
+\newcommand{\dstr}{\ensuremath{\Dstar}\xspace}
+\newcommand{\dstrstr}{\ensuremath{D^{**}}\xspace}
+\newcommand{\dsp}{\ensuremath{\Dstarp}\xspace}
+\newcommand{\dsm}{\ensuremath{\Dstarm}\xspace}
+\newcommand{\dsz}{\ensuremath{\Dstarz}\xspace}
+
+
+\def\B       {\ensuremath{B}\xspace}
+%%% do NOT use ensuremath here
+\def\Bbar    {\kern 0.18em\bar{\kern -0.18em B}{}\xspace}
+\def\Bb      {\ensuremath{\Bbar}\xspace}
+\def\BB      {\ensuremath{B\Bbar}\xspace} 
+\def\Bz      {\ensuremath{B^0}\xspace}
+\def\Bzb     {\ensuremath{\Bbar^0}\xspace}
+\def\BzBzb   {\ensuremath{\Bz {\kern -0.16em \Bzb}}\xspace}
+\def\Bu      {\ensuremath{B^+}\xspace}
+\def\Bub     {\ensuremath{B^-}\xspace}
+\def\Bp      {\ensuremath{\Bu}\xspace}
+\def\Bm      {\ensuremath{\Bub}\xspace}
+\def\Bpm     {\ensuremath{B^\pm}\xspace}
+\def\Bmp     {\ensuremath{B^\mp}\xspace}
+\def\BpBm    {\ensuremath{\Bu {\kern -0.16em \Bub}}\xspace}
+\def\Bs      {\ensuremath{B_s}\xspace}
+\def\Bsb     {\ensuremath{\Bbar_s}\xspace}
+
+\newcommand{\optbar}[1]{\shortstack{{ \scalebox{0.5}{\tiny(\rule[.5ex]{1.9em}{.3mm})}} \\ [-.6ex] $#1$}}
+
+\def\BorBbar    {\optbar{\kern +0.13em B}{}\xspace}
+\def\DorDbar    {\optbar{\kern +0.13em D}{}\xspace}
+\def\KorKbar    {\optbar{\kern +0.13em K}{}\xspace}
+\def\BzorBzbar  {\ensuremath{\BorBbar^0}\xspace}
+\def\DzorDzbar  {\ensuremath{\DorDbar^0}\xspace}
+\def\KzorKzbar  {\ensuremath{\KorKbar^0}\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% ONIA %%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\jpsi     {\ensuremath{{J\mskip -3mu/\mskip -2mu\psi\mskip 2mu}}\xspace}
+\def\psitwos  {\ensuremath{\psi{(2S)}}\xspace}
+\def\psiprpr  {\ensuremath{\psi(3770)}\xspace}
+\def\etac     {\ensuremath{\eta_c}\xspace}
+\def\chiczero {\ensuremath{\chi_{c0}}\xspace}
+\def\chicone  {\ensuremath{\chi_{c1}}\xspace}
+\def\chictwo  {\ensuremath{\chi_{c2}}\xspace}
+\mathchardef\Upsilon="7107
+\def\Y#1S{\ensuremath{\Upsilon{(#1S)}}\xspace}% no space before {...}!
+\def\OneS  {\Y1S}
+\def\TwoS  {\Y2S}
+\def\ThreeS{\Y3S}
+\def\FourS {\Y4S}
+\def\FiveS {\Y5S}
+
+%\def\chic1{\ensuremath{\chi_{c1}}}
+%\def\chic2{\ensuremath{\chi_{c2}}}
+%\def\chic3{\ensuremath{\chi_{c3}}}
+\def\chic#1{\ensuremath{\chi_{c#1}}\xspace} % dbm
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% BARYONS %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\proton      {\ensuremath{p}\xspace}
+\def\antiproton  {\ensuremath{\overline p}\xspace}
+\def\neutron     {\ensuremath{n}\xspace}
+\def\antineutron {\ensuremath{\overline n}\xspace}
+
+\mathchardef\Deltares="7101
+\mathchardef\Xi="7104
+\mathchardef\Lambda="7103
+\mathchardef\Sigma="7106
+\mathchardef\Omega="710A
+
+%%% do NOT use ensuremath here
+\def\Deltabar{\kern 0.25em\overline{\kern -0.25em \Deltares}{}\xspace}
+\def\Lbar{\kern 0.2em\overline{\kern -0.2em\Lambda\kern 0.05em}\kern-0.05em{}\xspace}
+\def\Sigbar{\kern 0.2em\overline{\kern -0.2em \Sigma}{}\xspace}
+\def\Xibar{\kern 0.2em\overline{\kern -0.2em \Xi}{}\xspace}
+\def\Obar{\kern 0.2em\overline{\kern -0.2em \Omega}{}\xspace}
+\def\Nbar{\kern 0.2em\overline{\kern -0.2em N}{}\xspace}
+\def\Xb{\kern 0.2em\overline{\kern -0.2em X}{}\xspace}
+
+\def\X {\ensuremath{X}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TAU BRANCHING FRACTIONS %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\BR         {{\ensuremath{\cal B}\xspace}}
+\def\BRtauptoe  {\ensuremath{\BR(\taup \to \ep)}\xspace}
+\def\BRtaumtoe  {\ensuremath{\BR(\taum \to \en)}\xspace}
+\def\BRtauptomu {\ensuremath{\BR(\taup \to \mup)}\xspace}
+\def\BRtaumtomu {\ensuremath{\BR(\taum \to \mun)}\xspace}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%  LIGHT HADRON DECAYS %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\etaprepp}{\ensuremath{\etapr \to \eta \pipi}\xspace}
+\newcommand{\etaprrg} {\ensuremath{\etapr \to \rho^0 \g}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  B DECAYS   %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\bpsiks     {\ensuremath{\Bz \to \jpsi \KS}\xspace}
+\def\bpsikst    {\ensuremath{\Bz \to \jpsi \Kstar}\xspace}
+\def\bpsikl     {\ensuremath{\Bz \to \jpsi \KL}\xspace}
+\def\bpsikzeropi{\ensuremath{\Bz \to \jpsi \Kstarz (\to \KL \piz)}\xspace}
+\def\bpsikpluspi{\ensuremath{\Bu \to \jpsi \Kstarp (\to \KL \pip)}\xspace}
+\def\bpsikpi    {\ensuremath{\Bz/\Bzb \to \jpsi (\to \mumu) \Kpm \pimp}\xspace}
+\def\bupsik     {\ensuremath{\Bpm \to \jpsi (\to \mumu) \Kpm}\xspace}
+\def\bpsiX      {\ensuremath{\Bz \to \jpsi \X}\xspace}
+
+\def\Bzbtomu    {\ensuremath{\Bzb \to \mu \X}\xspace}
+\def\Bzbtox     {\ensuremath{\Bzb \to \X}\xspace}
+\def\Bztorhorho {\ensuremath{\Bz \to \rho \rho}\xspace}
+\def\Bztokrho   {\ensuremath{\Bz \to K \rho}\xspace}
+\def\Bztokstpi  {\ensuremath{\Bz \to \Kstar \pi}\xspace}
+\def\Bztoapi    {\ensuremath{\Bz \to a_1 \pi}\xspace}
+\def\Bztodd     {\ensuremath{\Bz \to \DpDm}\xspace}
+\def\Bztodstd   {\ensuremath{\Bz \to \Dstarp \Dm}\xspace}
+\def\Bztodstdst {\ensuremath{\Bz \to \Dstarp \Dstarm}\xspace}
+
+\def\Bztopipi   {\ensuremath{\Bz \to \pipi}\xspace}
+\def\Bztokpi    {\ensuremath{\Bz \to \Kpm\pimp}\xspace}
+\def\Bztokk     {\ensuremath{\Bz \to \KpKm}\xspace}
+\def\Bztokzpiz  {\ensuremath{\Bz \to \Kz\piz}\xspace}
+\def\Bztoppz    {\ensuremath{\Bz \to \ppz}\xspace}
+\def\Bztokzkz   {\ensuremath{\Bz \to \KzKzb}\xspace}
+\def\Bztorhopi  {\ensuremath{\Bz \to \rhopm \pimp}\xspace}
+
+\def\Btopipiz   {\ensuremath{\Bpm \to \pipm \piz}\xspace}
+\def\Btokkz     {\ensuremath{\Bpm \to \Kpm  \KorKbar}\xspace}
+\def\Btokpiz    {\ensuremath{\Bpm \to \Kpm  \piz}\xspace}
+\def\Btokzpi    {\ensuremath{\Bpm \to \KorKbar  \pipm}\xspace}
+\def\Btorhopiz  {\ensuremath{\Bpm \to \rhopm\piz}\xspace}
+
+\def\BtoDK      {\ensuremath{B \to DK}\xspace}
+\def\Btodstlnu  {\ensuremath{B \to \Dstar \ell \nu}\xspace}
+\def\Btodstdlnu {\ensuremath{B \to \Dstar(D) \ell \nu}\xspace}
+\def\Btorholnu  {\ensuremath{B \to \rho \ell \nu}\xspace}
+\def\Btopilnu   {\ensuremath{B \to \pi \ell \nu}\xspace}
+
+\def\Btoetah    {\ensuremath{B \to \eta h}\xspace}
+\def\Btoetaph   {\ensuremath{B \to \etapr h}\xspace}
+
+\newcommand{\Betaprks}{\ensuremath{\Bz \to \etapr \KS}\xspace}
+\newcommand{\Betaprkz}{\ensuremath{\Bz \to \etapr \Kz}\xspace}
+
+\def\btosgam    {\ensuremath{b \to s \g}\xspace}
+\def\btodgam    {\ensuremath{b \to d \g}\xspace}
+\def\btosll     {\ensuremath{b \to s \ellell}\xspace}
+\def\btosnunu   {\ensuremath{b \to s \nunub}\xspace}
+\def\btosgaga   {\ensuremath{b \to s \gaga}\xspace}
+\def\btosglue   {\ensuremath{b \to s g}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  Y(4S) DECAYS   %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\upsbb   {\ensuremath{\FourS \to \BB}\xspace}
+\def\upsbzbz {\ensuremath{\FourS \to \BzBzb}\xspace}
+\def\upsbpbm {\ensuremath{\FourS \to \BpBm}\xspace}
+\def\upspsikl{\ensuremath{\FourS \to (\bpsikl) (\Bzbtox)}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  TAU DECAYS   %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\tauptoe    {\ensuremath{\taup \to \ep \nunub}\xspace}
+\def\taumtoe    {\ensuremath{\taum \to \en \nunub}\xspace}
+\def\tauptomu   {\ensuremath{\taup \to \mup \nunub}\xspace}
+\def\taumtomu   {\ensuremath{\taum \to \mun \nunub}\xspace}
+\def\tauptopi   {\ensuremath{\taup \to \pip \nub}\xspace}
+\def\taumtopi   {\ensuremath{\taum \to \pim \nu}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% GAMMA-GAMMA REACTIONS %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\ggtopi     {\ensuremath{\gaga \to \pipi}\xspace}
+\def\ggtopiz    {\ensuremath{\gaga \to \ppz}\xspace}
+\def\ggstox     {\ensuremath{\ggstar \to \X(1420) \to \kaon \kaon \pi}\xspace}
+\def\ggstoeta   {\ensuremath{\ggstar \to \eta(550) \to \pipi \piz}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%   KINEMATICS    %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\ptot       {\mbox{$p$}\xspace}
+%\def\pxy        {\mbox{$p_{\rm t}$}
+\def\pxy        {\mbox{$p_T$}\xspace}
+%\def\pt         {\mbox{$p_{\rm t}$}\xspace}
+\def\pt         {\mbox{$p_T$}\xspace}
+\def\mes        {\mbox{$m_{\rm ES}$}\xspace}
+\def\mec        {\mbox{$m_{\rm EC}$}\xspace}
+\def\DeltaE     {\mbox{$\Delta E$}\xspace}
+
+\def\pbcm {\ensuremath{p^*_{\Bz}}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%   GEOMETRY    %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\mphi       {\mbox{$\phi$}\xspace}
+\def\mtheta     {\mbox{$\theta$}\xspace}
+\def\ctheta     {\mbox{$\cos\theta$}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% ENERGY AND MOMENTUM %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\tev}{\ensuremath{\mathrm{\,Te\kern -0.1em V}}\xspace}
+\newcommand{\gev}{\ensuremath{\mathrm{\,Ge\kern -0.1em V}}\xspace}
+\newcommand{\mev}{\ensuremath{\mathrm{\,Me\kern -0.1em V}}\xspace}
+\newcommand{\kev}{\ensuremath{\mathrm{\,ke\kern -0.1em V}}\xspace}
+\newcommand{\ev}{\ensuremath{\mathrm{\,e\kern -0.1em V}}\xspace}
+\newcommand{\gevc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\mevc}{\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c}}\xspace}
+\newcommand{\gevcc}{\ensuremath{{\mathrm{\,Ge\kern -0.1em V\!/}c^2}}\xspace}
+\newcommand{\mevcc}{\ensuremath{{\mathrm{\,Me\kern -0.1em V\!/}c^2}}\xspace}
+\def\ifb   {\ensuremath{fb^{-1}}}
+%\def\ev   {\ensuremath{\rm \,e\kern -0.08em V}}
+%\def\kev  {\ensuremath{\rm \,ke\kern -0.08em V}} 
+%\def\mev  {\ensuremath{\rm \,Me\kern -0.08em V}} 
+%\def\gev  {\ensuremath{\rm \,Ge\kern -0.08em V}} 
+%\def\gevc {\ensuremath{\rm \,Ge\kern -0.08em V\!/c}} 
+%\def\gevc {\ensuremath{{\rm \,Ge\kern -0.08em V\!/}c}} 
+%\def\tev  {\ensuremath{\rm \,Te\kern -0.08em V}}
+%\def\mevc {\ensuremath{\rm \,Me\kern -0.08em V\!/c}} 
+%\def\mevc {\ensuremath{{\rm \,Me\kern -0.08em V\!/}c}} 
+%\def\gevcc{\ensuremath{\rm \,Ge\kern -0.08em V\!/c^2}} 
+%\def\mevcc{\ensuremath{\rm \,Me\kern -0.08em V\!/c^2}} 
+%\def\gevcc{\ensuremath{{\rm \,Ge\kern -0.08em V\!/}c^2}} 
+%\def\mevcc{\ensuremath{{\rm \,Me\kern -0.08em V\!/}c^2}} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% DISTANCE AND AREA %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\syin {\ensuremath{^{\prime\prime}}\xspace}
+\def\inch   {\ensuremath{\rm \,in}\xspace} % \in is taken
+\def\ft   {\ensuremath{\rm \,ft}\xspace}
+\def\km   {\ensuremath{{\rm \,km}}\xspace}
+\def\m    {\ensuremath{{\rm \,m}}\xspace}
+\def\cm   {\ensuremath{{\rm \,cm}}\xspace}
+\def\cma  {\ensuremath{{\rm \,cm}^2}\xspace}
+\def\mma  {\ensuremath{{\rm \,mm}^2}\xspace}
+%\def\mum  {\ensuremath{{\rm \,\mum}}\xspace}
+\def\mum  {\ensuremath{{\,\mu\rm m}}\xspace}%% mu meter 
+%\def\muma {\ensuremath{\rm \,\mum}^2\xspace}
+\def\muma       {\ensuremath{{\,\mu\rm m}^2}\xspace}
+\def\nm   {\ensuremath{{\rm \,nm}}\xspace}
+\def\fm   {\ensuremath{{\rm \,fm}}\xspace}
+\def\nm         {\ensuremath{{\rm \,nm}}\xspace}   %% nanometer
+%
+\def\barn{\ensuremath{{\rm \,b}}\xspace}
+\def\barnhyph{\ensuremath{{\rm -b}}\xspace}
+\def\mbarn{\ensuremath{{\rm \,mb}}\xspace}
+\def\mbarnhyph{\ensuremath{{\rm -mb}}\xspace}
+\def\nb         {\ensuremath{{\rm \,nb}}\xspace}
+\def\invnb {\ensuremath{\mbox{\,nb}^{-1}}\xspace}
+\def\pb {\ensuremath{{\rm \,pb}}\xspace}
+\def\invpb {\ensuremath{\mbox{\,pb}^{-1}}\xspace}
+\def\fb   {\ensuremath{\mbox{\,fb}}\xspace}
+\def\invfb   {\ensuremath{\mbox{\,fb}^{-1}}\xspace}
+\def\invab   {\ensuremath{\mbox{\,ab}^{-1}}\xspace}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% TIME AND MASS  %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\mus  {\ensuremath{\rm \,\mus}\xspace}
+\def\ns   {\ensuremath{\rm \,ns}\xspace}
+\def\ps   {\ensuremath{\rm \,ps}\xspace}
+\def\fs   {\ensuremath{\rm \,fs}\xspace}
+\def\gm   {\ensuremath{\rm \,g}\xspace}
+
+%%\def\s{\ensuremath{\rm {\,s}}} %% second - this displays nothing  - why?
+\def\sec{\ensuremath{\rm {\,s}}\xspace}       %% second - this works - jw 4/19
+\def\ms         {\ensuremath{{\rm \,ms}}\xspace}     %% millisecond
+\def\mus        {\ensuremath{\,\mu{\rm s}}\xspace}    %% microsecond
+\def\ns         {\ensuremath{{\rm \,ns}}\xspace}      %% nanosecond
+\def\ps         {\ensuremath{{\rm \,ps}}\xspace}  %% picosecond
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%   MISCELLANEOUS %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\Xrad {\ensuremath{X_0}\xspace}
+\def\NIL{\ensuremath{\lambda_{int}}\xspace}
+\let\dgr\degrees
+
+
+%\def\m          {\ensuremath{\rm \,m}}    %% meter
+%\def\ma         {\ensuremath{\rm \,m}^2}  %% meter squared
+%\def\cm         {\ensuremath{\rm \,cm}}   %% centimeter
+%\def\cma        {\ensuremath{\rm \,cm}^2} %% centimeter squared
+\def\cms         {\ensuremath{{\rm \,cm}^{-2} {\rm s}^{-1}}\xspace}
+%\def\mm         {\ensuremath{\rm \,mm}}   %% millimeter
+%\def\mma        {\ensuremath{\rm \,mm}^2} %% millimeter squared
+%\def\mum        {\ensuremath{\,\mu\rm m}} %% mu meter
+%\def\muma       {\ensuremath{\,\mu\rm m^2}}
+
+
+\def\mic  {\ensuremath{\,\mu{\rm C}}\xspace}
+\def\krad {\ensuremath{\rm \,krad}\xspace}
+\def\cmc  {\ensuremath{{\rm \,cm}^3}\xspace}
+\def\yr   {\ensuremath{\rm \,yr}\xspace}
+\def\hr   {\ensuremath{\rm \,hr}\xspace}
+\def\degc {\ensuremath{^\circ}{C}\xspace}
+\def\degk {\ensuremath {\rm K}\xspace}
+\def\degrees{\ensuremath{^{\circ}}\xspace}
+\def\mrad{\ensuremath{\rm \,mrad}\xspace}               %% milliradian
+\def\rad{\ensuremath{\rm \,rad}\xspace}
+\def\mradhyph{\ensuremath{\rm -mr}\xspace}
+%
+\def\sx    {\ensuremath{\sigma_x}\xspace}    
+\def\sy    {\ensuremath{\sigma_y}\xspace}   
+\def\sz    {\ensuremath{\sigma_z}\xspace}    
+
+%\renewcommand{\bar}[1]{\overline{#1}}  
+
+% Some more (from Helen)
+%\def\O{{\ensuremath{\cal O}}}  !!! This is a predefined LaTeX symbol !!!
+\def\order{{\ensuremath{\cal O}}\xspace}
+\def\L{{\ensuremath{\cal L}}\xspace}
+\def\calL{{\ensuremath{\cal L}}\xspace}
+%\def\S{{\ensuremath{\cal S}}}  !!! This is a predefined LaTeX symbol !!!
+\def\calS{{\ensuremath{\cal S}}\xspace}
+\def\calA{{\ensuremath{\cal A}}\xspace}
+\def\calD{{\ensuremath{\cal D}}\xspace}
+\def\calR{{\ensuremath{\cal R}}\xspace}
+
+%% Arrows:
+\def\ra                 {\ensuremath{\rightarrow}\xspace}
+\def\to                 {\ensuremath{\rightarrow}\xspace}
+
+
+\newcommand{\stat}{\ensuremath{\mathrm{(stat)}}\xspace}
+\newcommand{\syst}{\ensuremath{\mathrm{(syst)}}\xspace}
+
+
+\def\pep2{PEP-II}
+\def\BF{$B$ Factory}
+\def\abf {asymmetric \BF}
+\def\sx    {\ensuremath{\sigma_x}\xspace}     
+\def\sy    {\ensuremath{\sigma_y}\xspace}   
+\def\sz    {\ensuremath{\sigma_z}\xspace}
+
+
+\newcommand{\inverse}{\ensuremath{^{-1}}\xspace}
+\newcommand{\dedx}{\ensuremath{\mathrm{d}\hspace{-0.1em}E/\mathrm{d}x}\xspace}
+\newcommand{\chisq}{\ensuremath{\chi^2}\xspace}
+\newcommand{\delm}{\ensuremath{m_{\dstr}-m_{\dz}}\xspace}
+\newcommand{\lum} {\ensuremath{\mathcal{L}}\xspace}
+
+\def\gsim{{~\raise.15em\hbox{$>$}\kern-.85em
+          \lower.35em\hbox{$\sim$}~}\xspace}
+\def\lsim{{~\raise.15em\hbox{$<$}\kern-.85em
+          \lower.35em\hbox{$\sim$}~}\xspace}
+
+\def\qsq                {\ensuremath{q^2}\xspace}
+
+
+% Data processing
+\def\kbytes     {\ensuremath{{\rm \,kbytes}}\xspace}
+\def\kbsps      {\ensuremath{{\rm \,kbytes/s}}\xspace}
+\def\kbits      {\ensuremath{{\rm \,kbits}}\xspace}
+\def\kbsps      {\ensuremath{{\rm \,kbits/s}}\xspace}
+\def\mbsps      {\ensuremath{{\rm \,Mbits/s}}\xspace}
+\def\mbytes     {\ensuremath{{\rm \,Mbytes}}\xspace}
+\def\mbps       {\ensuremath{{\rm \,Mbyte/s}}\xspace}
+\def\mbsps      {\ensuremath{{\rm \,Mbytes/s}}\xspace}
+\def\gbsps      {\ensuremath{{\rm \,Gbits/s}}\xspace}
+\def\gbytes     {\ensuremath{{\rm \,Gbytes}}\xspace}
+\def\gbsps      {\ensuremath{{\rm \,Gbytes/s}}\xspace}
+\def\tbytes     {\ensuremath{{\rm \,Tbytes}}\xspace}
+\def\tbpy       {\ensuremath{{\rm \,Tbytes/yr}}\xspace}
+%
+
+
+
+
+% QCD parameters
+
+\newcommand{\as}{\ensuremath{\alpha_{\scriptscriptstyle S}}\xspace}
+\newcommand{\MSb}{\ensuremath{\overline{\mathrm{MS}}}\xspace}
+\newcommand{\LMSb}{%
+  \ensuremath{\Lambda_{\overline{\scriptscriptstyle\mathrm{MS}}}}\xspace
+}
+
+% Electroweak parameters
+
+\newcommand{\tw}{\ensuremath{\theta_{\scriptscriptstyle W}}\xspace}
+\newcommand{\twb}{%
+  \ensuremath{\overline{\theta}_{\scriptscriptstyle W}}\xspace
+}
+\newcommand{\Afb}[1]{{\ensuremath{A_{\scriptscriptstyle FB}^{#1}}}\xspace}
+\newcommand{\gv}[1]{{\ensuremath{g_{\scriptscriptstyle V}^{#1}}}\xspace}
+\newcommand{\ga}[1]{{\ensuremath{g_{\scriptscriptstyle A}^{#1}}}\xspace}
+\newcommand{\gvb}[1]{{\ensuremath{\overline{g}_{\scriptscriptstyle V}^{#1}}}\xspace}
+\newcommand{\gab}[1]{{\ensuremath{\overline{g}_{\scriptscriptstyle A}^{#1}}}\xspace}
+
+
+% CKM, CP violation
+
+\def\eps{\varepsilon\xspace}
+\def\epsK{\varepsilon_K\xspace}
+\def\epsB{\varepsilon_B\xspace}
+\def\epsp{\varepsilon^\prime_K\xspace}
+
+\def\CP                {\ensuremath{C\!P}\xspace}
+%\def\CPT               {\ensuremath{C\!P\!T}\xspace}
+\def\CPT               {\ensuremath{C\!PT}\xspace} % Looks better without \!
+% added by GHM on March 25, 2003
+\def\C       {\ensuremath{C}\xspace}
+\def\P       {\ensuremath{P}\xspace}
+\def\T       {\ensuremath{T}\xspace}
+
+
+
+\def\epstag  {\ensuremath{\varepsilon_{\rm tag}}\xspace}
+\def\tagfac  {\ensuremath{\epstag(1-2w)^2}\xspace}
+
+\def\rhobar {\ensuremath{\overline \rho}\xspace}
+\def\etabar {\ensuremath{\overline \eta}\xspace}
+%\def\paramest {\ensuremath{{\hat A}, {\hat \rho}, {\hat \eta} }}
+%\def\ssparamest {\ensuremath{{\hat A}, {\hat {\sin 2 \alpha}}, 
+%{\hat {\sin 2 \beta}} }}
+\def\meas {\ensuremath{|V_{cb}|, |\frac{V_{ub}}{V_{cb}}|, 
+|\varepsilon_K|, \Delta m_{B_d}}\xspace}
+
+\def\Vud  {\ensuremath{|V_{ud}|}\xspace}
+\def\Vcd  {\ensuremath{|V_{cd}|}\xspace}
+\def\Vtd  {\ensuremath{|V_{td}|}\xspace}
+\def\Vus  {\ensuremath{|V_{us}|}\xspace}
+\def\Vcs  {\ensuremath{|V_{cs}|}\xspace}
+\def\Vts  {\ensuremath{|V_{ts}|}\xspace}
+\def\Vub  {\ensuremath{|V_{ub}|}\xspace}
+\def\Vcb  {\ensuremath{|V_{cb}|}\xspace}
+\def\Vtb  {\ensuremath{|V_{tb}|}\xspace}
+
+%\def\sa{${\sin\! 2 \alpha  }$\xspace}
+%\def\sb{${\sin\! 2 \beta   }$\xspace}
+%\def\sg{${\sin\! 2 \gamma  }$\xspace}
+
+% added by Gautier for tagging, tagmix, and sin2beta
+\def\stwoa{\ensuremath{\sin\! 2 \alpha  }\xspace}
+\def\stwob{\ensuremath{\sin\! 2 \beta   }\xspace}
+\def\stwog{\ensuremath{\sin\! 2 \gamma  }\xspace}
+\def\mistag{\ensuremath{w}\xspace}
+\def\dilution{\ensuremath{\cal D}\xspace}
+\def\deltaz{\ensuremath{{\rm \Delta}z}\xspace}
+\def\deltat{\ensuremath{{\rm \Delta}t}\xspace}
+\def\deltamd{\ensuremath{{\rm \Delta}m_d}\xspace}
+
+\newcommand{\fsubd}{\ensuremath{f_D}}\xspace
+\newcommand{\fds}{\ensuremath{f_{D_s}}\xspace}
+\newcommand{\fsubb}{\ensuremath{f_B}\xspace}
+\newcommand{\fbd}{\ensuremath{f_{B_d}}\xspace}
+\newcommand{\fbs}{\ensuremath{f_{B_s}}\xspace}
+\newcommand{\bsubb}{\ensuremath{B_B}\xspace}
+\newcommand{\bbd}{\ensuremath{B_{B_d}}\xspace}
+\newcommand{\bbs}{\ensuremath{B_{B_s}}\xspace}
+\newcommand{\rgbb}{\ensuremath{\hat{B}_B}\xspace}
+\newcommand{\rgbbd}{\ensuremath{\hat{B}_{B_d}}\xspace}
+\newcommand{\rgbbs}{\ensuremath{\hat{B}_{B_s}}\xspace}
+\newcommand{\rgbk}{\ensuremath{\hat{B}_K}\xspace}
+\newcommand{\lqcd}{\ensuremath{\Lambda_{\mathrm{QCD}}}\xspace}
+
+%\newcommand{\eqref}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\subsecref}[1]{Section~\ref{subsec:#1}}
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+
+
+
+
+
+
+% Journal References
+
+% These bases are useful for ``submitted to'' when no volume is needed
+\newcommand{\epjBase}        {Eur.\ Phys.\ Jour.\xspace}
+\newcommand{\jprlBase}       {Phys.\ Rev.\ Lett.\xspace}
+\newcommand{\jprBase}        {Phys.\ Rev.\xspace}
+\newcommand{\jplBase}        {Phys.\ Lett.\xspace}
+\newcommand{\nimBaseA}       {Nucl.\ Instr.\ Meth.\xspace}
+\newcommand{\nimBaseB}       {Nucl.\ Instr.\ and Meth.\xspace}
+\newcommand{\nimBaseC}       {Nucl.\ Instr.\ and Methods\xspace}
+\newcommand{\nimBaseD}       {Nucl.\ Instrum.\ Methods\xspace}
+\newcommand{\nimBaseE}       {Nucl.\ Instrum.\ Meth.\xspace}
+\newcommand{\npBase}         {Nucl.\ Phys.\xspace}
+\newcommand{\zpBase}         {Z.\ Phys.\xspace}
+
+
+\newcommand{\apas}      [1]  {{Acta Phys.\ Austr.\ Suppl.\ {\bf #1}}}
+\newcommand{\app}       [1]  {{Acta Phys.\ Polon.\ {\bf #1}}}
+\newcommand{\ace}       [1]  {{Adv.\ Cry.\ Eng.\ {\bf #1}}}
+\newcommand{\anp}       [1]  {{Adv.\ Nucl.\ Phys.\ {\bf #1}}}
+\newcommand{\annp}      [1]  {{Ann.\ Phys.\ {\bf #1}}}
+\newcommand{\araa}      [1]  {{Ann.\ Rev.\ Astr.\ Ap.\ {\bf #1}}}
+\newcommand{\arnps}     [1]  {{Ann.\ Rev.\ Nucl.\ Part.\ Sci.\ {\bf #1}}}
+\newcommand{\arns}      [1]  {{Ann.\ Rev.\ Nucl.\ Sci.\ {\bf #1}}}
+\newcommand{\appopt}    [1]  {{Appl.\ Opt.\ {\bf #1}}}
+\newcommand{\japj}      [1]  {{Astro.\ Phys.\ J.\ {\bf #1}}}
+\newcommand{\baps}      [1]  {{Bull.\ Am.\ Phys.\ Soc.\ {\bf #1}}}
+\newcommand{\seis}      [1]  {{Bull.\ Seismological Soc.\ of Am.\ {\bf #1}}}
+\newcommand{\cmp}       [1]  {{Commun.\ Math.\ Phys.\ {\bf #1}}}
+\newcommand{\cnpp}      [1]  {{Comm.\ Nucl.\ Part.\ Phys.\ {\bf #1}}}
+\newcommand{\cpc}       [1]  {{Comput.\ Phys.\ Commun.\ {\bf #1}}}
+\newcommand{\epj}       [1]  {\epjBase\ {\bf #1}}
+%\newcommand{\epjc}      [1]  {{Eur.\ Phys.\ Jour.\ C~{\bf #1}}}
+\newcommand{\epjc}      [1]  {\epjBase\ C~{\bf #1}}
+\newcommand{\fizika}    [1]  {{Fizika~{\bf #1}}}
+\newcommand{\fp}        [1]  {{Fortschr.\ Phys.\ {\bf #1}}}
+\newcommand{\ited}      [1]  {{IEEE Trans.\ Electron.\ Devices~{\bf #1}}}
+\newcommand{\itns}      [1]  {{IEEE Trans.\ Nucl.\ Sci.\ {\bf #1}}}
+\newcommand{\ijqe}      [1]  {{IEEE J.\ Quantum Electron.\ {\bf #1}}}
+\newcommand{\ijmp}      [1]  {{Int.\ Jour.\ Mod.\ Phys.\ {\bf #1}}}
+\newcommand{\ijmpa}     [1]  {{Int.\ J.\ Mod.\ Phys.\ {\bf A{\bf #1}}}}
+\newcommand{\jl}        [1]  {{JETP Lett.\ {\bf #1}}}
+\newcommand{\jetp}      [1]  {{JETP~{\bf #1}}}
+\newcommand{\jpg}       [1]  {{J.\ Phys.\ {\bf G{\bf #1}}}}
+\newcommand{\jap}       [1]  {{J.\ Appl.\ Phys.\ {\bf #1}}}
+\newcommand{\jmp}       [1]  {{J.\ Math.\ Phys.\ {\bf #1}}}
+\newcommand{\jmes}      [1]  {{J.\ Micro.\ Elec.\ Sys.\ {\bf #1}}}
+%\newcommand{\josa}      [1]  {{J.\ Opt.\ Soc.\ Am.\ {\bf #1}}}
+\newcommand{\mpl}       [1]  {{Mod.\ Phys.\ Lett.\ {\bf #1}}}
+
+%\newcommand{\nim}       [1]  {{Nucl.\ Instrum.\ and Methods~{\bf #1}}}
+\newcommand{\nim}       [1]  {\nimBaseC~{\bf #1}}
+\newcommand{\nimaa}       [1]  {\nimBaseE~{\bf #1}}
+%\newcommand{\nima}      [1]  {{Nucl.\ Instrum.\ Methods~{\bf A{\bf #1}}}}
+\newcommand{\nima}      [1]  {\nimBaseA~A~{\bf #1}}
+
+%\newcommand{\np}        [1]  {{Nucl.\ Phys.\ {\bf #1}}}
+\newcommand{\np}        [1]  {\npBase\ {\bf #1}}
+%\newcommand{\npb}       [1]  {{Nucl.\ Phys.\ {\bf B{\bf #1}}}}
+\newcommand{\npb}       [1]  {\npBase\ B~{\bf #1}}
+\newcommand{\npps}      [1]  {{Nucl.\ Phys.\ Proc.\ Suppl.\ {\bf #1}}}
+\newcommand{\npaps}     [1]  {{Nucl.\ Phys.\ A~Proc.\ Suppl.\ {\bf #1}}}
+\newcommand{\npbps}     [1]  {{Nucl.\ Phys.\ B~Proc.\ Suppl.\ {\bf #1}}}
+
+\newcommand{\ncim}      [1]  {{Nuo.\ Cim.\ {\bf #1}}}
+\newcommand{\optl}      [1]  {{Opt.\ Lett.\ {\bf #1}}}
+\newcommand{\optcom}    [1]  {{Opt.\ Commun.\ {\bf #1}}}
+\newcommand{\partacc}   [1]  {{Particle Acclerators~{\bf #1}}}
+\newcommand{\pan}       [1]  {{Phys.\ Atom.\ Nuclei~{\bf #1}}}
+\newcommand{\pflu}      [1]  {{Physics of Fluids~{\bf #1}}}
+\newcommand{\ptoday}    [1]  {{Physics Today~{\bf #1}}}
+
+%\newcommand{\jpl}       [1]  {{Phys.\ Lett.\ {\bf #1}}}      % dbm
+\newcommand{\jpl}       [1]  {\jplBase\ {\bf #1}}
+%\newcommand{\plb}       [1]  {{Phys.\ Lett.\ B~{\bf #1}}}   % dbm
+\newcommand{\plb}       [1]  {\jplBase\ B~{\bf #1}}
+\newcommand{\prep}      [1]  {{Phys.\ Rep.\ {\bf #1}}}
+%\newcommand{\jprl}      [1]  {{Phys.\ Rev.\ Lett.\ {\bf #1}}} % dbm
+\newcommand{\jprl}      [1]  {\jprlBase\ {\bf #1}}
+%\newcommand{\pr}        [1]  {{Phys.\ Rev.\ {\bf #1}}}
+\newcommand{\pr}        [1]  {\jprBase\ {\bf #1}}
+%\newcommand{\jpra}      [1]  {{Phys.\ Rev.\ A~{\bf #1}}}
+\newcommand{\jpra}      [1]  {\jprBase\ A~{\bf #1}}
+%\newcommand{\jprd}      [1]  {{Phys.\ Rev.\ D~{\bf #1}}}
+\newcommand{\jprd}      [1]  {\jprBase\ D~{\bf #1}}
+%\newcommand{\jpre}      [1]  {{Phys.\ Rev.\ E~{\bf #1}}}
+\newcommand{\jpre}      [1]  {\jprBase\ E~{\bf #1}}
+
+\newcommand{\prsl}      [1]  {{Proc.\ Roy.\ Soc.\ Lond.\ {\bf #1}}}
+\newcommand{\ppnp}      [1]  {{Prog.\ Part.\ Nucl.\ Phys.\ {\bf #1}}}
+\newcommand{\progtp}    [1]  {{Prog.\ Theor.\ Phys.\ {\bf #1}}}
+\newcommand{\rpp}       [1]  {{Rep.\ Prog.\ Phys.\ {\bf #1}}}
+\newcommand{\jrmp}      [1]  {{Rev.\ Mod.\ Phys.\ {\bf #1}}}  % dbm
+\newcommand{\rsi}       [1]  {{Rev.\ Sci.\ Instr.\ {\bf #1}}}
+\newcommand{\sci}       [1]  {{Science~{\bf #1}}}
+\newcommand{\sjnp}      [1]  {{Sov.\ J.\ Nucl.\ Phys.\ {\bf #1}}}
+\newcommand{\spd}       [1]  {{Sov.\ Phys.\ Dokl.\ {\bf #1}}}
+\newcommand{\spu}       [1]  {{Sov.\ Phys.\ Usp.\ {\bf #1}}}
+\newcommand{\tmf}       [1]  {{Teor.\ Mat.\ Fiz.\ {\bf #1}}}
+\newcommand{\yf}        [1]  {{Yad.\ Fiz.\ {\bf #1}}}
+%\newcommand{\zp}        [1]  {{Z.\ Phys.\ {\bf #1}}}
+\newcommand{\zp}        [1]  {\zpBase\ {\bf #1}}
+%\newcommand{\zpc}       [1]  {{Z.\ Phys.\ C~{\bf #1}}}
+\newcommand{\zpc}       [1]  {\zpBase\ C~{\bf #1}}
+\newcommand{\zpr}       [1]  {{ZhETF Pis.\ Red.\ {\bf #1}}}
+
+\newcommand{\hepex}     [1]  {hep-ex/{#1}}
+\newcommand{\hepph}     [1]  {hep-ph/{#1}}
+\newcommand{\hepth}     [1]  {hep-th/{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%% SOFTWARE PACKAGES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\aslund     {\mbox{\tt Aslund}\xspace}
+\def\bbsim      {\mbox{\tt BBsim}\xspace}
+\def\beast      {\mbox{\tt Beast}\xspace}
+\def\beget      {\mbox{\tt Beget}\xspace}
+\def\Bta        {\mbox{\tt Beta}\xspace}
+\def\betakfit   {\mbox{\tt BetaKfit}\xspace}
+\def\cornelius  {\mbox{\tt Cornelius}\xspace}
+\def\evtgen     {\mbox{\tt EvtGen}\xspace}
+\def\euclid     {\mbox{\tt Euclid}\xspace}
+\def\fitver     {\mbox{\tt FitVer}\xspace}
+\def\fluka      {\mbox{\tt Fluka}\xspace}
+\def\fortran    {\mbox{\tt Fortran}\xspace}
+\def\gcalor     {\mbox{\tt GCalor}\xspace}
+\def\geant      {\mbox{\tt GEANT}\xspace}
+\def\gheisha    {\mbox{\tt Gheisha}\xspace}
+\def\hemicosm   {\mbox{\tt HemiCosm}\xspace}
+\def\hepevt     {\mbox{\tt{/HepEvt/}}\xspace}
+\def\jetset74   {\mbox{\tt Jetset \hspace{-0.5em}7.\hspace{-0.2em}4}\xspace}
+%\def\jetset     {\mbox{\tt Jetset \hspace{-0.5em}7.\hspace{-0.2em}4}}
+\def\koralb     {\mbox{\tt KoralB}\xspace}
+\def\minuit     {\mbox{\tt Minuit}\xspace}
+\def\objegs     {\mbox{\tt Objegs}\xspace}
+\def\paw        {\mbox{\tt Paw}\xspace}
+\def\Root       {\mbox{\tt Root}\xspace}
+\def\squaw      {\mbox{\tt Squaw}\xspace}
+\def\stdhep     {\mbox{\tt StdHep}\xspace}
+\def\trackerr   {\mbox{\tt TrackErr}\xspace}
+\def\turtle     {\mbox{\tt Decay~Turtle}\xspace}

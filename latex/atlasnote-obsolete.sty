@@ -1,0 +1,25 @@
+%-------------------------------------------------------------------------------
+% Obsolete definitions from atlasnote etc.
+%-------------------------------------------------------------------------------
+% These definitions are kept for the record in case they are needed somewhere
+
+%-------------------------------------------------------------------------------
+% Table captions:
+% Use \icaption instead of \caption in tables and figures to get a
+% caption that is indented. Note that the label should be included
+% inside \icaption for it to work properly.
+\newlength{\capindent}
+\setlength{\capindent}{0.5cm}
+\newlength{\capwidth}
+\setlength{\capwidth}{\textwidth}
+\addtolength{\capwidth}{-2\capindent}
+\newlength{\figwidth}
+\setlength{\figwidth}{\textwidth}
+\addtolength{\figwidth}{-2.0cm}
+\newcommand{\icaption}[2][!*!,!]{\hspace*{\capindent}%
+  \begin{minipage}{\capwidth}
+    \ifthenelse{\equal{#1}{!*!,!}}%
+      {\caption{#2}}%
+      {\caption[#1]{#2}}
+      \vspace*{3mm}
+  \end{minipage}}

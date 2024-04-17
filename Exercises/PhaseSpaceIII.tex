@@ -1,0 +1,151 @@
+
+\newcommand{\ma}{\ensuremath{M}\xspace}
+\newcommand{\mb}{\ensuremath{m_1}\xspace}
+\newcommand{\mc}{\ensuremath{m_2}\xspace}
+\newcommand{\eb}{\ensuremath{E_1}\xspace}
+\newcommand{\ec}{\ensuremath{E_2}\xspace}
+
+\newcommand{\pb}{\ensuremath{p_1}\xspace}
+\newcommand{\pc}{\ensuremath{p_2}\xspace}
+\newcommand{\pvecb}{\ensuremath{\textbf{p}_1}\xspace}
+\newcommand{\pvecc}{\ensuremath{\textbf{p}_2}\xspace}
+\newcommand{\pvecstar}{\ensuremath{\textbf{p}^{*}}\xspace}
+\newcommand{\pmodvecb}{\ensuremath{\text{p}_1}\xspace}
+\newcommand{\pmodvecc}{\ensuremath{\text{p}_2}\xspace}
+\newcommand{\pmodvecstar}{\ensuremath{\text{p}^{*}}\xspace}
+
+\be
+
+\item Particle $A$ with mass \ma decays into two daughters with masses \mb
+and \mc.  Derive the formula for the {\em break up momentum},
+$\pmodvecstar = |\pvecb| = |\pvecc|$, in the rest frame of $A$.
+Use your result to evaluate $\pmodvecstar$ for the decay \mbox{$\Delta(1232)\to p\pi$}.
+
+\begin{solution}
+    First calculate \eb:
+    \begin{align*}
+        P^2 = \ma^2 & = (\pb + \pc)^2 = \pb^2 + \pc^2 + 2\pb\cdot \pc                                                              \\
+                    & = \mb^2 + \mc^2 + 2(\eb \ec - \pvecb\cdot \pvecc)                                                            \\
+                    & = \mb^2 + \mc^2 + 2(\eb \ec + \pmodvecb^2) \qquad \rarrow \qquad \text{with }\pvecb = -\pvecc                \\
+                    & = (2\mb^2 + 2\pmodvecb^2) - \mb^2 + \mc^2 + 2\eb(\ma-\eb) \qquad \rarrow \qquad \text{with } \ma = \eb + \ec \\
+                    & \rarrow \eb = \frac{\ma^2 + \mb^2 - \mc^2}{2\ma}
+    \end{align*}
+    Now calculate $\pmodvecb$:
+    \begin{align*}
+        \pmodvecb^2 & = \eb^2 - \mb^2                                                                                                      \\
+                    & = (\eb + \mb)(\eb - \mb)                                                                                             \\
+                    & = \left(\frac{\ma^2 + \mb^2 - \mc^2 + 2\ma\mb}{2\ma}\right)\left(\frac{\ma^2 + \mb^2 - \mc^2 - 2\ma\mb}{2\ma}\right) \\
+                    & \rarrow \pmodvecb = \frac{1}{2\ma}
+        \left[ \left( (\ma+\mb)^2 - \mc^2 \right)
+            \left( (\ma-\mb)^2 - \mc^2 \right)  \right ]^{\frac{1}{2}}
+    \end{align*}
+    I believe this is equivalent to the PDG formula:
+    \begin{align*}
+        \pmodvecb = \frac{1}{2\ma}
+        \left[ \left( \ma^2 - (\mb+\mc)^2 \right)
+            \left( \ma^2 - (\mb-\mc)^2 \right)  \right ]^{\frac{1}{2}}
+    \end{align*}
+
+    For the decay $\Delta(1232)\to p\pi$, $p^* \approx 230$~MeV/c
+
+\end{solution}
+
+
+\item Starting from the formula for the 2-body decay rate,
+\begin{align*}
+    \Gamma_{fi} = \frac{1}{2\ma} \int |\mathcal{M}_{fi}|^2
+    \frac{\text{d}^3\pb}{(2\pi)^3 2\eb}
+    \frac{\text{d}^3\pc}{(2\pi)^3 2\ec}\,
+    (2\pi)^4 \delta^4(P - p_1 - p_2 )\,,
+\end{align*}
+
+% integrate out all variables
+% except $\text{d}\Omega^* = \text{d}\cos\theta^*\text{d}\phi^*$ 
+
+perform integrations using $\delta$ functions to obtain $\diff \Gamma/\diff\Omega$ in the centre of mass frame, $P = \begin{pmatrix}M\\\vec{0}\end{pmatrix}$,
+to obtain the 2-body phase-space factor.
+
+    {\em Hint: You may want to use the following property of the delta function:}
+\begin{align*}
+    \int_{-\infty}^{+\infty} g(x) \delta(f(x)) \text{d}x = \sum_{x_0} \frac{g(x_0)}{|\text{d}f/\text{d}x|_{x_0}}, %\int_{x_1}^{x_2} \delta(x-x_0)
+    \text{ where } x_0 \in \{x:\, f(x)=0\}.
+\end{align*}
+
+
+\begin{solution}
+    First integrate out \pvecc, imposing $\pvecc = -\pvecb$ via the delta function:
+    \begin{align*}
+        \Gamma_{fi} = \frac{1}{8\pi^2\ma} \int |\mathcal{M}_{fi}|^2
+        \delta(\ma - \eb - \ec)
+        \frac{\text{d}^3\pb}{4\eb\ec}
+    \end{align*}
+    Substitute $\text{d}^3\pb = \pmodvecb^2\text{d}\pmodvecb\text{d}\Omega$:
+    \begin{align*}
+        \Gamma_{fi} = \frac{1}{8\pi^2\ma} \int |\mathcal{M}_{fi}|^2
+        \delta(\ma - \eb - \ec)
+        \frac{\pmodvecb^2\text{d}\pmodvecb\text{d}\Omega}{4\eb\ec}
+    \end{align*}
+    Set:
+    \begin{align*}
+        f(\pmodvecb)                          & = M-\eb-\ec = M - \left(\mb^2+\pmodvecb^2\right)^\frac{1}{2}
+        - \left(\mc^2+\pmodvecb^2\right)^\frac{1}{2}                                                         \\
+        \frac{\partial f}{\partial \pmodvecb} & =
+        -\pmodvecb\left[\left(\mb^2+\pmodvecb^2\right)^{-\frac{1}{2}}
+        + \left(\mc^2+\pmodvecb^2\right)^{-\frac{1}{2}}\right]                                               \\
+        g(\pmodvecb)                          & = \frac{\pmodvecb^2}{4\eb\ec}
+        = \frac{\pmodvecb^2}{4\left(\mb^2+\pmodvecb^2\right)^\frac{1}{2}
+        \left(\mc^2+\pmodvecb^2\right)^{-\frac{1}{2}}}                                                       \\
+        \Gamma_{fi}                           & = \frac{1}{8\pi^2\ma} \int |\mathcal{M}_{fi}|^2
+        \delta\left(f(\pmodvecb)\right) g(\pmodvecb) \text{d}\pmodvecb\text{d}\Omega                         \\
+                                              & = \frac{1}{8\pi^2\ma}
+        \left|\frac{\text{d}f}{\text{d}\pmodvecb}\right|_{\pmodvecstar}^{-1}
+        \int |\mathcal{M}_{fi}|^2
+        g(\pmodvecb)\delta(\pmodvecb - \pmodvecstar)\text{d}\pmodvecb\text{d}\Omega                          \\
+                                              & = \frac{1}{8\pi^2\ma}
+        \frac{\eb\ec}{\pmodvecstar(\eb+\ec)} \frac{(\pmodvecstar)^2}{4\eb\ec}
+        \int |\mathcal{M}_{fi}|^2\text{d}\Omega                                                              \\
+                                              & = \frac{\pmodvecstar}{32\pi^2\ma^2}
+        \int |\mathcal{M}_{fi}|^2\text{d}\Omega
+    \end{align*}
+\end{solution}
+
+
+
+% \item Use the phase-space factor to calculate the ratio of the decays $f_0(1500)\rightarrow \eta\eta$ and $f_0(1500)\rightarrow K\bar{K}$.
+% 
+% How does this compare to the measured values, and what can be concluded from this?
+% 
+%  \begin{solution}
+%  \begin{align*}
+%  \frac{\Gamma_{f_0(1500)\rightarrow \eta\eta}}{\Gamma_{f_0(1500)\rightarrow K\bar{K}}} 
+%      = \frac{\pmodvecstar_{\eta\eta}}{\pmodvecstar_{K\bar{K}}} = \sqrt{\frac{M_{f_0(1500)}^2-4m_\eta^2}{M_{f_0(1500)}^2-4m_K^2}}
+%      %\approx \frac{45.465\GeV}{45.500\GeV}
+%      \approx 0.91
+%  \end{align*}
+% 
+% This is roughly comparable to the measured ratio of 0.59, and could be interpreted as the $f_0(1500)$ having an exotic gluonic component which is ``flavour blind''. 
+%  
+%  \end{solution}
+
+% \item Use the phase-space factor to calculate the ratio of the
+% $Z\to\tau\tau$ to the $Z\to ee$ decay rates, assuming that the matrix element is a constant, which does not depend on the masses of the coupled leptons.
+% 
+% \begin{solution}
+% \begin{align*}
+% \frac{\Gamma_{Z\to\tau\tau}}{\Gamma_{Z\to ee}} 
+%     = \frac{\pmodvecstar_{\tau\tau}}{\pmodvecstar_{ee}} = \sqrt{\frac{M_Z^2-4m_\tau^2}{M_Z^2-4m_e^2}}
+%     \approx \frac{45.465\GeV}{45.500\GeV}
+%     = 0.9992
+% \end{align*}
+% 
+% \end{solution}
+
+%\item Derive the 3-body phase-space element and use it to calculate the ratio
+%of the decay rates for 
+%\mbox{$K^{+}\to\pi^+\pi^+\pi^-$} and \mbox{$K^{+}\to\pi^+\pi^0\pi^0$}
+%assuming the same matrix element for each.  
+%
+%{\bf Note from Will: I think we should drop this one. The Daliz covers enough, and 
+%this is getting way to hard for them}
+
+\ee

@@ -1,0 +1,96 @@
+%-------------------------------------------------------------------------------
+% Physics style file for ATLAS documents
+% In your own directory, you may of course change this as you like.
+% If you don't understand it or want to change 
+% or add something publicly, contact the responsible.
+%
+% See ChangeLog or SVN log for history of changes.
+% Responsible: Ian Brock (ian.brock@cern.ch)
+%-------------------------------------------------------------------------------
+% $Id: atlasphysics.sty 301586 2014-08-18 17:36:36Z brock $
+% $HeadURL: svn+ssh://svn.cern.ch/reps/atlasgroups/pubcom/latex/atlasnote/trunk/atlasphysics.sty $
+%-------------------------------------------------------------------------------
+\def\AP@PackageVersion{00-98-00}
+
+\ProvidesPackage{latex/atlasphysics}[2014/08/29 v.00-98-00 ATLAS physics macros]
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+
+\typeout{ATLAS physics style file v.\AP@PackageVersion}
+
+\let\if@BSM\iffalse
+\let\if@Math\iffalse
+\let\if@Misc\iftrue
+\let\if@Other\iffalse
+\let\if@Particle\iftrue
+\let\if@Process\iffalse
+\let\if@Unit\iftrue
+\DeclareOption{bsm}{\let\if@BSM\iftrue}
+\DeclareOption{nobsm}{\let\if@BSM\iffalse}
+\DeclareOption{math}{\let\if@Math\iftrue}
+\DeclareOption{nomath}{\let\if@Math\iffalse}
+\DeclareOption{misc}{\let\if@Misc\iftrue}
+\DeclareOption{nomisc}{\let\if@Misc\iffalse}
+\DeclareOption{other}{\let\if@Other\iftrue}
+\DeclareOption{noother}{\let\if@Other\iffalse}
+\DeclareOption{particle}{\let\if@Particle\iftrue}
+\DeclareOption{noparticle}{\let\if@Particle\iffalse}
+\DeclareOption{process}{\let\if@Process\iftrue}
+\DeclareOption{noprocess}{\let\if@Process\iffalse}
+\DeclareOption{unit}{\let\if@Unit\iftrue}
+\DeclareOption{nounit}{\let\if@Unit\iffalse}
+\let\if@texmf\iffalse
+\DeclareOption{texmf}{\let\if@Minimum\iftrue \let\if@Default\iffalse}
+
+% Execute options
+\ProcessOptions \relax
+
+% xspace is always needed 
+\RequirePackage{xspace}
+
+% Use texmf option if ATLAS LaTeX package is centrally installed, e.g. in texmf/tex/latex
+\if@texmf
+	% BSM particles including SUSY
+  \if@BSM      \RequirePackage{atlasbsm} \fi
+
+  % Useful math related definitions
+  \if@Math     \RequirePackage{atlasmath} \fi
+
+	% Miscellaneous useful definitions
+	\if@Misc     \RequirePackage{atlasmisc} \fi
+
+	% Other maybe useful definitions
+	\if@Other    \RequirePackage{atlasother} \fi
+
+	% Particles
+	\if@Particle \RequirePackage{atlasparticle} \fi
+
+	% Processes
+	\if@Process  \RequirePackage{atlasprocess} \fi
+
+	% Units
+	\if@Unit     \RequirePackage{atlasunit} \fi
+\else
+	% BSM particles including SUSY
+  \if@BSM      \RequirePackage{latex/atlasbsm} \fi
+
+  % Useful math related definitions
+  \if@Math     \RequirePackage{latex/atlasmath} \fi
+
+	% Miscellaneous useful definitions
+	\if@Misc     \RequirePackage{latex/atlasmisc} \fi
+
+	% Other maybe useful definitions
+	\if@Other    \RequirePackage{latex/atlasother} \fi
+
+	% Particles
+	\if@Particle \RequirePackage{latex/atlasparticle} \fi
+
+	% Processes
+	\if@Process  \RequirePackage{latex/atlasprocess} \fi
+
+	% Units
+	\if@Unit     \RequirePackage{latex/atlasunit} \fi
+\fi
+
+
+\endinput

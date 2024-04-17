@@ -1,0 +1,71 @@
+% The following macros are usually used atlas-documemnt-metadata.tex
+% They are defined here so that this file does not have to be changed 
+% when adapting an ATLAS document for journal submission
+
+% Draft version
+\def\@draftversion{}
+\newcommand*{\AtlasVersion}[1]{\def\@draftversion{#1}}
+\newcommand*{\draftversion}[1]{\def\@draftversion{#1}}
+
+% ATLAS reference code - empty by default
+\def\@refcode{}
+\newcommand*{\AtlasRefCode}[1]{\def\@refcode{#1}}
+
+% ATLAS note number
+\def\@atlasnote{}
+\newcommand*{\AtlasNote}[1]{\def\@atlasnote{#1}}
+
+% Submission details
+\def\@journal{}
+\newcommand*{\AtlasJournal}[1]{\def\@journal{#1}}
+%\newcommand*{\journal}[1]{\def\@journal{#1}}
+
+% Abstract text
+\def\@abstracttext{}
+\newcommand{\AtlasAbstract}[1]{%
+	\def\AtlasAbstractText{#1}
+}
+\newcommand{\abstracttext}[1]{%
+	\def\AtlasAbstractText{#1}
+}
+
+\def\AC@PreprintNumber{}
+\newcommand*{\PreprintIdNumber}[1]{\def\AC@PreprintNumber{#1}}
+% Multiple corresponding editors
+\def\AC@Editors{} % Corresponding editor name & corresponding.editor@email \\ }
+\newcommand{\AtlasCoverEditor}[2]{\def\AC@Editors{#1, #2}}%
+%  \g@addto@macro\AC@Editors{%
+%    #1 & ({\tt #2}) \\
+%  }%
+%}
+
+\newcommand{\AtlasCoverCommentsDeadline}[1]{\def\AC@CommentsDeadline{#1}}
+\newcommand{\AtlasCoverAnalysisTeam}[1]{\def\AC@AnalysisTeam{#1}}
+\newcommand{\AtlasCoverEgroupEditors}[1]{\def\AC@EgroupEditors{#1}}
+\newcommand{\AtlasCoverEgroupEdBoard}[1]{\def\AC@EgroupEdBoard{#1}}
+
+% EdBoard members
+\def\AC@EdBoardMembers{}
+\newcommand{\AtlasCoverEdBoardMember}[1]{%
+  \g@addto@macro\AC@EdBoardMembers{%
+    #1 \\
+  }
+}
+
+% Readers (for PUB notes)
+\def\AC@ReaderMembers{}
+\newcommand{\AtlasCoverReaderMember}[1]{%
+  \g@addto@macro\AC@ReaderMembers{%
+    #1 \\
+  }
+}
+
+\newcommand{\AtlasCoverTwikiURL}[1]{\def\AC@TwikiURL{#1}}
+
+% Supporting note list
+\def\AC@Notes{}
+\newcommand{\AtlasCoverSupportingNote}[2]{%
+  \g@addto@macro\AC@Notes{%
+    #1 & \url{#2} \\
+  }
+}

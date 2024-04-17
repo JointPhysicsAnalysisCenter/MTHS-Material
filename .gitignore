@@ -1,0 +1,7 @@
+*.log
+*.aux
+*.log
+*.out
+.DS_Store
+
+sheet_*.pdf

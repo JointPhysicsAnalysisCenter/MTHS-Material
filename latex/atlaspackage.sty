@@ -1,0 +1,115 @@
+%-------------------------------------------------------------------------------
+% List of packages that can or should be used in ATLAS documents
+%
+% See ChangeLog or SVN log for history of changes.
+% Responsible: Ian Brock (ian.brock@cern.ch)
+%-------------------------------------------------------------------------------
+% $Id: atlasnote.cls 301586 2014-08-18 17:36:36Z brock $
+% $HeadURL: svn+ssh://svn.cern.ch/reps/atlasgroups/pubcom/latex/atlasnote/trunk/atlasnote.cls $
+%-------------------------------------------------------------------------------
+\def\AP@PackageVersion{00-99-00}
+
+\ProvidesPackage{latex/atlaspackage}[2014/09/01 v.00-99-00 ATLAS LaTeX packages]
+\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+
+\typeout{ATLAS LaTeX packages v.\AP@PackageVersion}
+
+\let\if@Minimum\iffalse
+\let\if@Default\iftrue
+\let\if@Maximum\iffalse
+\DeclareOption{minimal}{\let\if@Minimum\iftrue \let\if@Default\iffalse}
+\DeclareOption{default}{\let\if@Minimum\iftrue \let\if@Default\iftrue}
+\DeclareOption{full}{\let\if@Minimum\iftrue \let\if@Default\iftrue \let\if@Maximum\iftrue}
+\let\if@biblatex\iffalse
+\DeclareOption{biblatex}{\let\if@biblatex\iftrue}
+
+% Execute options
+\ProcessOptions \relax
+%-------------------------------------------------------------------------------
+% Packages normally included by atlasdoc
+\RequirePackage{graphicx}
+\RequirePackage{color}
+% Document language control
+\RequirePackage{babel}
+
+% Input encoding - allows ä, ö, ß etc. to be input directly
+\RequirePackage[utf8]{inputenc}
+% Encoding used for prinout
+\RequirePackage[T1]{fontenc}
+% Document font - this should be defined in the documement class
+%\RequirePackage{mathptmx}
+%\RequirePackage[varg]{txfonts}
+% amsmath and txfonts define the same symbols - use the txfont version
+\RequirePackage{savesym}
+\savesymbol{iint}
+\savesymbol{iiint}
+\savesymbol{iiiint}
+\savesymbol{idotsint}
+% Extra and very useful maths macros from AMS
+\RequirePackage{amsmath}
+% The AMS \iint etc. is now defined as \AMSiint
+\restoresymbol{AMS}{iint}
+\restoresymbol{AMS}{iiint}
+\restoresymbol{AMS}{iiiint}
+\restoresymbol{AMS}{idotsint}
+% Add line numbers
+\RequirePackage{lineno}
+% If you have an old lineno or do not have it, you can get it from the latex/other directory
+% \RequirePackage{latex/other/lineno}
+
+\if@Default
+	% Extra options for footnotes
+	\RequirePackage[bottom]{footmisc}
+	% Nicer tables - use \toprule, \midrule, \bottomrule instead of \hline
+  \RequirePackage{booktabs}
+  % Typset anything with units using this package - also has very useful table formatting 
+	\RequirePackage{siunitx}
+	% Several plots in a single figure
+	\RequirePackage{subfig}
+  % subfigure option needed if subfig(ure) is also used
+  \RequirePackage[subfigure]{tocloft}
+  % Remove dots in table of contents
+  \renewcommand{\cftdot}{}
+	% Declare a few options and standard units for siunitx that are otherwise missing
+	\sisetup{separate-uncertainty, range-units = repeat,  detect-display-math=true}
+%		detect-family = true, detect-display-math=true}
+	\sisetup{group-digits=integer, group-minimum-digits=4}
+	\DeclareSIUnit\micron{\micro\metre}
+	\DeclareSIUnit\mrad{\milli\radian}
+	\DeclareSIUnit\nb{\nano\barn}
+	\DeclareSIUnit\pb{\pico\barn}
+	\DeclareSIUnit\fb{\femto\barn}
+	\DeclareSIUnit\clight{\ensuremath{c}}
+\fi
+
+
+\if@Maximum
+	% Tables that go over more than one page
+	\RequirePackage{xtab}
+	% \RequirePackage{longtable}
+	% \RequirePackage{supertable}
+	% Easy rotation of tables and figures
+	\RequirePackage{rotating}
+	% Quotes that are also language dependent - use \enquote{text} instead of ``text''
+	\RequirePackage[autostyle=true]{csquotes}
+	% Nicer fractions
+	\RequirePackage{xfrac}
+\fi
+
+% hyperref is usually included as late as possible
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[colorlinks,breaklinks,pdftitle={ATLAS Document},pdfauthor={ATLAS Collaboration}]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=blue}
+
+% Use biblatex and biber for the bibliography
+% Style is numeric and comp option changes [1,2,3] into [1-3]
+% sorting=none    means the order is as they are cited
+% block=ragged    turns off block form, which avoids large spaces
+% firstinits=true means initial are used for first names
+% Some more tweaks should be made to the appearance, but they are not yet implemented
+\if@biblatex
+  \RequirePackage[backend=biber,
+	  style=numeric-comp,sorting=none,block=ragged,firstinits=true]{biblatex}
+\fi
+
+\endinput

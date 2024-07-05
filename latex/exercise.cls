@@ -110,17 +110,34 @@
 }
 
 
-% --- Classwork / Homework macros
-\newcommand{\classwork}{
+% --- Morning / Afternoon macros
+\newcommand{\morning}{
   \begin{center}
-    \bf \Large Classwork\\[2ex]
+    \bf \Large Lecture material\\[2ex]
   \end{center}
 }
 
-\newcommand{\homework}{
+\newcommand{\afternoon}{
   \begin{center}
-    \bf \Large Homework\\[2ex]
+    \bf \Large Exercices\\[2ex]
   \end{center}
+}
+
+
+\newcommand{\material}[2]{
+  \begin{minipage}{0.5\textwidth}
+    \textbf{Discussed topics}:
+    \begin{itemize}
+      #1
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.5\textwidth}
+    \textbf{References}:
+    \begin{itemize}
+      #2
+    \end{itemize}
+  \end{minipage}
+  \vspace{1cm}
 }
 
 
@@ -199,13 +216,11 @@
 \newcommand{\makeheader}{%
   \begin{center}
     \rule{\textwidth}{2pt}
-    \@institute\hfill
-    % institute / subject code / semester
-    \@subjectcode\hfill
-    \@semester
-    \\[2mm]
+    \@institute
+    \hfill\@subjectcode
+    \\[1mm]
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{Picture1.png}
+      \includegraphics[width=\linewidth]{Figures/QRCode.png}
     \end{minipage}%
     \begin{minipage}[c]{0.68\textwidth} % Adjust the width as needed
       \centering
@@ -213,16 +228,18 @@
       \vspace{1ex}
       {\bf\Large \@subjectname{} -- Exercise sheet \@sheetnumber}
 
-      % lecturers / head tutors
-      {\large \@lecturers}\par
-      {\@tutors}
+      % lecturers
+      \vspace{1mm}
+      {\large Morning: \@lecturers}\par
+      \vspace{1mm}
+      {Afternoon: \@tutors}
 
       % contact
       % \ifthenelse{\equal{\empty}{\@contact}}{}{{\small Contact: \@contact}}
 
     \end{minipage}
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{QRCode.png}
+      \includegraphics[width=\linewidth]{Figures/QRCode.png}
     \end{minipage}%
     \\[2mm]
     % dates

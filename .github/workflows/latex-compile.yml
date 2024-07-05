@@ -3,7 +3,7 @@ name: Compile LaTeX Document
 on:
   push:
     branches:
-      - main
+      - "**"
   pull_request:
     branches:
       - main
@@ -25,6 +25,7 @@ jobs:
             make
 
       - name: Deploy
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -14,6 +14,38 @@
             padding: 0;
             background-color: #e7e7e7; /* RUB-Grau */
         }
+        header {
+            width: 100%;
+            background-color: #17365c; /* RUB-Blau */
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .header-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .header-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            background-color: #8dae10; /* RUB-Grün */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .header-buttons a:hover {
+            background-color: #6b8c0e; /* Darker shade of RUB-Grün */
+        }
+        .header-buttons img {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
         h1 {
             color: #17365c; /* RUB-Blau */
             text-align: center;
@@ -41,6 +73,16 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="header-buttons">
+            <a href="https://github.com/JointPhysicsAnalysisCenter/MTHS-Material" target="_blank">
+                <img src="../Figures/github-mark.png" alt="GitHub Logo">
+                GitHub
+            </a>
+            <a href="https://indico.gsi.de/event/19202/" target="_blank">Indico</a>
+            <a href="https://indico.gsi.de/event/19202/timetable/#20240715" target="_blank">Timetable</a>
+        </div>
+    </header>
     <h1>Modern Techniques in Hadron Spectroscopy</h1>
     <h2>Week 1</h2>
     <div class="container">

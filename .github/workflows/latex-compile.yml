@@ -24,8 +24,9 @@ jobs:
             apk add make
             make
 
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: compiled-document
-          path: main.pdf
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Compiled
+          publish_branch: gh-pages

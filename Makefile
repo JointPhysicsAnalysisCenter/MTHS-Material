@@ -1,66 +1,36 @@
-### CONFIG 
-#########################################
-## override this on commandline
-#SHEETS=classwork_1
-#SHEETS=classwork_1
-SHEETS=$(notdir $(basename $(wildcard $(SHDIR)/*.tex)))
+name: Compile LaTeX Document
 
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch:
 
-## Paths
-TOPDIR=./
-EXDIR=$(TOPDIR)/Exercises
-SHDIR=$(TOPDIR)/Sheets
-OUTDIR=$(TOPDIR)/Compiled
-TEXDIR=$(TOPDIR)/latex
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-## Targets/Dependencies
-EXCER:=$(wildcard $(EXDIR)/*.tex)
-WKDIRS:=$(addprefix "workdir_",$(SHEETS))
-EXTARGETS:=$(addsuffix .pdf,$(addprefix $(OUTDIR)/,$(SHEETS)))
-SOLTARGETS:=$(addsuffix _sol.pdf,$(addprefix $(OUTDIR)/,$(SHEETS)))
-TEX:=$(wildcard $(TEXDIR)/*)
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-### RULES
-#########################################
-.PHONY: all clean clobber
-all: $(EXTARGETS) $(SOLTARGETS) 
+    - name: Set up LaTeX environment
+      uses: dante-ev/latex-action@latest
 
-## build working dir
-$(WKDIR): 
-	mkdir $@
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y make
 
-## build sheet (no solutions)
-$(OUTDIR)/%.pdf: $(SHDIR)/%.tex $(EXCER) $(TEX)
-	$(eval TARGET := $(basename $(notdir $@)))
-	$(eval WKDIR  := workdir_$(TARGET))
-	if [ ! -d "$(WKDIR)" ]; then mkdir $(WKDIR); fi
-	pdflatex -output-directory=$(WKDIR) "\let\ifwithsolution\iffalse\input{$(SHDIR)/$(TARGET)}" 
-	pdflatex -output-directory=$(WKDIR) "\let\ifwithsolution\iffalse\input{$(SHDIR)/$(TARGET)}" 
-	if [ ! -d "$(OUTDIR)" ]; then mkdir $(OUTDIR); fi
-	mv $(WKDIR)/$(TARGET).pdf $(OUTDIR)/.
+    - name: Execute Makefile
+      run: make
 
-## build sheet (with solutions)
-$(OUTDIR)/%_sol.pdf: $(SHDIR)/%.tex $(EXCER) $(TEX)
-	$(eval TARGET := $(subst _sol.pdf,,$(notdir $@)))
-	$(eval WKDIR  := workdir_$(TARGET))
-	if [ ! -d "$(WKDIR)" ]; then mkdir $(WKDIR); fi
-	pdflatex -output-directory=$(WKDIR) -jobname=$(TARGET)_sol "\let\ifwithsolution\iftrue\input{$(SHDIR)/$(TARGET)}" 
-	pdflatex -output-directory=$(WKDIR) -jobname=$(TARGET)_sol "\let\ifwithsolution\iftrue\input{$(SHDIR)/$(TARGET)}" 
-	if [ ! -d "$(OUTDIR)" ]; then mkdir $(OUTDIR); fi
-	mv $(WKDIR)/$(TARGET)_sol.pdf $(OUTDIR)/.
-
-
-clean: 
-	rm -rf $(WKDIRS) $(EXTARGETS) $(SOLTARGETS) 
-
-clobber: clean
-	rm -rf $(OUTDIR)
-
-
-
-
-
-
-
-
-
+    - name: Upload PDFs
+      uses: actions/upload-artifact@v2
+      with:
+        name: compiled-documents
+        path: Compiled/*.pdf

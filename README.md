@@ -17,8 +17,8 @@ Here are some key commands:
 - `\setexdate{date}`: Set the date when the exercises are discussed.
 - `\setduedate{date}`: Set the submission deadline for the exercises.
 - `\makeheader`: Creates a standardized header for the exercise sheet.
-- `\classwork`: Marks the beginning of classwork exercises.
-- `\homework`: Marks the beginning of homework exercises.
+- `\morning`: Marks the beginning of lecture material section.
+- `\afternoon`: Marks the beginning of exercise exercises.
 - `\importex{filename}{title}{points}`: Imports an exercise from the specified file, with a title and points allocation.
 
 ## Compilation Instructions

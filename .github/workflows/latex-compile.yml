@@ -16,19 +16,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up LaTeX environment
-        uses: dante-ev/latex-action@v2
-
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+      - name: Compile sheets
+        uses: actions/checkout@v4
+      - uses: xu-cheng/texlive-action@v2
         with:
-          root_file: main.tex
-          # Add any additional latex packages you need here
-          latexmk_shell_escape: true
-          latexmk_use_lualatex: true
+          scheme: full
+          run: |
+            apk add make
+            make
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: compiled-document
           path: main.pdf

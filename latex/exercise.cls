@@ -124,6 +124,23 @@
 }
 
 
+\newcommand{\material}[2]{
+  \begin{minipage}{0.5\textwidth}
+    \textbf{Discussed topics}:
+    \begin{itemize}
+      #1
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.5\textwidth}
+    \textbf{References}:
+    \begin{itemize}
+      #2
+    \end{itemize}
+  \end{minipage}
+  \vspace{1cm}
+}
+
+
 
 
 % --- Document Variables 

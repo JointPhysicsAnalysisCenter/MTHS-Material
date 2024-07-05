@@ -61,4 +61,4 @@ Let the GitHub Actions handle the compilation and distribution of these files.
 
 ## Contribution and Issues
 
-Contributors are welcome to enhance the LaTeX class, add new exercises, or improve the setup. For any issues or suggestions, please open an issue or pull request on GitHub.
+Contributors are welcome to enhance the LaTeX class, add new exercises, or improve the setup. For any issues or suggestions, please open an issue or pull request on GitHub. 

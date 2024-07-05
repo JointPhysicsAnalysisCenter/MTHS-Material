@@ -1,5 +1,7 @@
 # Modern Technique in Hadron Spectroscopy Summer School Material
 
+[![badge](https://img.shields.io/badge/Go-to_the_webpage-darkgreen)](https://jointphysicsanalysiscenter.github.io/MTHS-Material/)
+
 
 This repository hosts the materials and exercise sheets for the "Modern Techniques in Hadron Spectroscopy" summer school,
 aimed at training hadron physicists in theoretical and experimental methods related to major physics programs like LHC, BESIII, Belle, JLab, and FAIR.

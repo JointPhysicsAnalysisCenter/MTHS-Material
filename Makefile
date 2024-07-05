@@ -1,8 +1,5 @@
 ### CONFIG 
 #########################################
-## override this on commandline
-#SHEETS=classwork_1
-#SHEETS=classwork_1
 SHEETS=$(notdir $(basename $(wildcard $(SHDIR)/*.tex)))
 
 

@@ -55,6 +55,7 @@
 %\usepackage{ifthen}
 \usepackage{etoolbox}
 %\usepackage{xifthen}
+\usepackage{bbold}
 \usepackage{boxedminipage}
 \usepackage{environ}
 \renewcommand*{\familydefault}{\sfdefault}

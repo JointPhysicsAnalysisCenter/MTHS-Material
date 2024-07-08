@@ -1,0 +1,44 @@
+
+Consider the pseudo-vector (or gradient coupling) to the nucleon described by the Lagrangian
+\begin{equation}
+    \mathcal{L}=-\frac{f_{\pi NN}}{m_{\pi}} \bar \psi \gamma^{\mu} \gamma_5 \vec{\tau} \psi \cdot \partial_{\mu} \vec{\phi}^{(\pi)} ,
+\end{equation}
+and {\bf compute the contribution of the following diagram to the one-pion exchange potential (OPEP)}
+\fig{0.3}{diagram.png}
+
+Some hints:
+\begin{itemize}
+    \item You should compute $\bar u (p_1',s_1) \Gamma_{\pi NN} u(p_1,s_1)$, with $\Gamma_{\pi NN}= (i)^2 \frac{f_{\pi NN}}{m_{\pi}} \gamma^{\mu}  \gamma_5 \vec{\tau} q_{\mu}$ for the incoming pion.
+          Note that $i$ is the imaginary unit, ($\gamma^{\mu},  \gamma_5$) are  the gamma matrices, $\vec{\tau}$ is  the isospin vector,  $q$ is the four-momentum carried by the pion ($q_{\mu}=p_1'-p_1$),  ${f_{\pi NN}}$ is the ${\pi NN}$ coupling and $m_{\pi}$ is the pion mass.
+    \item Consider the static limit ($q_0 \rightarrow 0$)
+    \item The Dirac spinors $u(p,s)$ in the non-relativistic approach are given by $u(p,s)=\left( \begin{array} {c}
+                  \chi_s \\
+                  0
+              \end{array} \right) ,$
+          with $\chi_s$ the two-component Pauli spinor.
+    \item The gamma matrices are defined as
+          \begin{equation}
+              \gamma^0=
+              \left( \begin{array} {cc}
+                  \mathbb{1} & 0           \\
+                  0          & -\mathbb{1}
+              \end{array} \right),\quad
+              %
+              \gamma^k=
+              \left( \begin{array} {cc}
+                  0         & \sigma^k \\
+                  -\sigma^k & 0
+              \end{array} \right) ,\quad
+              %
+              \gamma^5=\gamma_5=
+              \left( \begin{array} {cc}
+                  0          & \mathbb{1} \\
+                  \mathbb{1} & 0
+              \end{array} \right)
+              \nonumber
+          \end{equation}
+          with  $\sigma^k$ the three Pauli matrices ($k$ running from 1 to 3). Also
+          $ \lbrace \gamma^{\mu}, \gamma^{\nu} \rbrace= 2 g^{\mu \nu}$ and $\lbrace \gamma_5,\gamma^{\mu} \rbrace =0$, with $\mu$ and $\nu$ running from 0 to 3. The metric tensor is $g_{00}=+1$, $g_{kk}=-1$, $g_{\mu \neq \nu}=0$.
+
+\end{itemize}
+

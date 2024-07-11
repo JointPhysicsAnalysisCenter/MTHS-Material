@@ -16,13 +16,54 @@
     \item Analyticity
     \item Unitarity
 }{
-    \item Book 1, \href{ref_inspire}{inspire}
-    \item Book 2, \href{ref_amazon}{amazon}
-    \item A good review, \href{inspire}{inspire}
-    \item A good aper, \href{inspire}{inspire}
+    \item Gattringer, Lang: Quantum Chromodynamics on the Lattice, \href{https://inspirehep.net/literature/841572}{inSpire}
+    \item L{\"u}scher, Computational Strategies in Lattice QCD, \href{arxiv}{https://arxiv.org/pdf/1002.4232}
 }
 
+
 \afternoon
+
+In this exercise session, we will use a Jupyter Notebook to explore various aspects of Lattice QCD.
+Follow these steps to set up your environment:
+
+\begin{enumerate}
+    \item \textbf{Clone the Notebook Repository}
+
+          First, open a terminal and clone the repository containing the notebook:
+          \begin{verbatim}
+    git clone https://github.com/username/lattice-qcd-notebook.git
+    \end{verbatim}
+          Navigate into the repository directory:
+          \begin{verbatim}
+    cd lattice-qcd-notebook
+    \end{verbatim}
+
+    \item \textbf{Install Python in a Conda Environment with Dependencies}
+
+          Make sure you have \texttt{conda} installed. Create a new conda environment and install the required packages:
+          \begin{verbatim}
+    conda create --name lattice-qcd python=3.9
+    conda activate lattice-qcd
+    conda install numpy scipy matplotlib jupyterlab
+    \end{verbatim}
+
+          Additionally, install any other dependencies listed in the \texttt{requirements.txt} file:
+          \begin{verbatim}
+    pip install -r requirements.txt
+    \end{verbatim}
+
+    \item \textbf{Start Jupyter Lab and Open the Notebook}
+
+          Launch Jupyter Lab from the terminal:
+          \begin{verbatim}
+    jupyter lab
+    \end{verbatim}
+          In your web browser, navigate to the Jupyter Lab interface. Open the notebook file \texttt{lattice\_qcd.ipynb}.
+
+    \item \textbf{Jupyter Notebook Cheat Sheet}
+
+          For basic commands and shortcuts in Jupyter Notebook, refer to the [Jupyter Notebook Cheat Sheet](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html).
+\end{enumerate}
 
 \importex{PhaseSpaceIII}{Two-body phase space}{}
 

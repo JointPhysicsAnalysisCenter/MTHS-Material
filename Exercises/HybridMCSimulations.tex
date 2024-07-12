@@ -1,13 +1,13 @@
-This exercise requires the openQCD software suite, available \href{https://luscher.web.cern.ch/luscher/openQCD/openQCD-2.4.2.tar.gz}{here}. 
+This exercise requires the openQCD software suite, available \href{https://luscher.web.cern.ch/luscher/openQCD/openQCD-2.4.2.tar.gz}{here}.
 
 \begin{enumerate}
 	\item Make sure the \texttt{Open MPI} and \texttt{OpenMP} libraries are installed.
 	\item In the openQCD source code, edit the file \texttt{main/Makefile}.
-		Near the top, add a line \texttt{GCC=<>} to specify the C-compiler on your 
-		system. Also specify \texttt{MPI\_HOME} to provide the location of the MPI libraries on your system, and \texttt{MPI\_INCLUDE} for the location of the mpi header files.
+	      Near the top, add a line \texttt{GCC=<>} to specify the C-compiler on your
+	      system. Also specify \texttt{MPI\_HOME} to provide the location of the MPI libraries on your system, and \texttt{MPI\_INCLUDE} for the location of the mpi header files.
 	\item In \texttt{include/global.h}, set \texttt{L0} to \texttt{L3} to simulate a $16^4$ lattice. The number of threads can be controlled by editing \texttt{L0\_TRD} to \texttt{L3\_TRD}. Return to the \texttt{main} directory, and execute the \texttt{make} command.
-	\item In a directory to be used for running, create the \texttt{log}, \texttt{dat}, and \texttt{cnfg} directories, and download modified input file 
-		\texttt{ym1.in}. 
-	\item Run a simulation using the \texttt{ym1} executable using the Wilson gauge action at $\beta=5.789$ approximately corresponding to a lattice spacing $a=0.14\,{\rm fm}$. Follow the plaquette to trace the thermalization process. Also, monitor the smoothed global topological charge. How many trajectories does it typically take for the charge to change sign? 
-	\item  Now change to $\beta=6.0$. To maintain an approximately constant physical volume, a $24^4$ lattice is required. Can you observe a `slowdown' in the global topological charge?  
+	\item In a directory to be used for running, create the \texttt{log}, \texttt{dat}, and \texttt{cnfg} directories, and download modified input file
+	      \texttt{ym1.in}.
+	\item Run a simulation using the \texttt{ym1} executable using the Wilson gauge action at $\beta=5.789$ approximately corresponding to a lattice spacing $a=0.14\,{\rm fm}$. Follow the plaquette to trace the thermalization process. Also, monitor the smoothed global topological charge. How many trajectories does it typically take for the charge to change sign?
+	\item  Now change to $\beta=6.0$. To maintain an approximately constant physical volume, a $24^4$ lattice is required. Can you observe a `slowdown' in the global topological charge?
 \end{enumerate}

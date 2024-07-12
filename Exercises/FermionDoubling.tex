@@ -1,27 +1,27 @@
-Consider the Fourier transform of the naive Dirac operator for a free field, i.e. with the gauge links all set to unity 
-
+Consider the Fourier transform of the naive Dirac operator for a free field with the gauge links all set to unity.
 \begin{equation}
-    \tilde{D}(p|q) = \frac{1}{|\Lambda|} \sum_{x,y} {\rm e}^{-ip\cdot x} \, D(x|y) \, {\rm e}^{-q\cdot y} 
-\end{equation} 
-where $|\Lambda|$ denotes the number of lattice sites.
-\begin{enumerate} 
-	\item Verify that $\tilde{D}(p|q) = \delta^4(p-q) \tilde{D}(p)$, with 
-		\begin{equation}
-			\tilde{D}(p) = m + \frac{i}{a} \sum_{\mu} \gamma_\mu \sin(ap_\mu).  
-		\end{equation}
-	\item Use the identity (with $c,\, b_{\mu} \in \mathbb{R}$) 
-		\begin{equation}
-			\left( c + i\sum_{\mu} \gamma_\mu b_\mu \right)^{-1} = \frac{c - i\sum_\mu \gamma_\mu b_{\mu}}{c^2 + \sum_\mu b_\mu^2} 
-		\end{equation}
-		to show that 
-		\begin{equation}
-			\tilde{D}(p)^{-1} = \frac{m - ia^{-1}\sum_{\mu} \gamma_\mu \sin(ap_{\mu})}{m^2 + a^{-2}\sum_\mu \sin^{2}(ap_{\mu})}. 
-		\end{equation}
-    Verify that this propagator has 16 poles at all corners of the Brilloin zone.
-    \item Repeat the above exercies for the Wilson Dirac operator $D_{\rm W}(x|y)$, which is the naive Dirac operator plus the Wilson term. To this end, show that the Fourier transform of the free Wilson Dirac operator is 
-	    \begin{equation}
-		    \tilde{D}_{\rm W}(p) = m + \frac{i}{a}\sum_{\mu} \gamma_{\mu}\sin(ap_\mu) + 
-		    \frac{1}{a} \sum_{\mu} (1 - \cos(ap_\mu)). 
-	    \end{equation}
-		Use this to compute $\tilde{D}_{\rm W}^{-1}(p)$ and verify that the doublers are given a mass $m + \frac{2\ell}{a}$ where $\ell$ is the number of non-zero components. 
+	\tilde{D}(p|q) = \frac{1}{|\Lambda|} \sum_{x,y} {\rm e}^{-ip\cdot x} \, D(x|y) \, {\rm e}^{iq\cdot y}
+\end{equation}
+where $|\Lambda|$ denotes the number of infinite lattice sites.
+
+\begin{enumerate}
+	\item Verify that $\tilde{D}(p|q) = \delta^4(p-q) \tilde{D}(p)$, with
+	      \begin{equation}
+		      \tilde{D}(p) = m + \frac{i}{a} \sum_{\mu} \gamma_\mu \sin(ap_\mu).
+	      \end{equation}
+	\item Use the identity (with $c,\, b_{\mu} \in \mathbb{R}$)
+	      \begin{equation}
+		      \left( c + i\sum_{\mu} \gamma_\mu b_\mu \right)^{-1} = \frac{c - i\sum_\mu \gamma_\mu b_{\mu}}{c^2 + \sum_\mu b_\mu^2}
+	      \end{equation}
+	      to show that
+	      \begin{equation}
+		      \tilde{D}(p)^{-1} = \frac{m - ia^{-1}\sum_{\mu} \gamma_\mu \sin(ap_{\mu})}{m^2 + a^{-2}\sum_\mu \sin^{2}(ap_{\mu})}.
+	      \end{equation}
+	      Verify that this propagator has 16 poles at all corners of the Brilloin zone.
+	\item Repeat the above exercies for the Wilson Dirac operator $D_{\rm W}(x|y)$, which is the naive Dirac operator plus the Wilson term. To this end, show that the Fourier transform of the free Wilson Dirac operator is
+	      \begin{equation}
+		      \tilde{D}_{\rm W}(p) = m + \frac{i}{a}\sum_{\mu} \gamma_{\mu}\sin(ap_\mu) +
+		      \frac{1}{a} \sum_{\mu} (1 - \cos(ap_\mu)).
+	      \end{equation}
+	      Use this to compute $\tilde{D}_{\rm W}^{-1}(p)$ and verify that the doublers are given a mass $m + \frac{2\ell}{a}$ where $\ell$ is the number of non-zero components.
 \end{enumerate}

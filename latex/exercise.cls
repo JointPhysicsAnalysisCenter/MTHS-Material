@@ -221,7 +221,7 @@
     \hfill\@subjectcode
     \\[1mm]
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{Figures/QRCode.png}
+      \includegraphics[width=1.1\linewidth]{Figures/bochum-top.jpg}
     \end{minipage}%
     \begin{minipage}[c]{0.68\textwidth} % Adjust the width as needed
       \centering
@@ -240,7 +240,7 @@
 
     \end{minipage}
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{Figures/QRCode.png}
+      \includegraphics[width=\linewidth]{Figures/qr-mths.png}
     \end{minipage}%
     \\[2mm]
     % dates

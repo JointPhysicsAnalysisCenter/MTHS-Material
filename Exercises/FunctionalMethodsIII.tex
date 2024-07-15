@@ -1,0 +1,62 @@
+
+
+	The Bethe-Salpeter vertex function $\Gamma_\pi$ of a pion can be expressed most generally by
+	\begin{equation}
+		\Gamma_\pi (P,p) =  \sum_{i=1}^4 f_i(P,p) \,T_i
+	\end{equation}
+	with tensors $T_1 = \gamma_5\,\mathbb{1}$, $T_2 = \gamma_5\,\hat{\slashed{P}}$, $T_3 = \gamma_5\,{\slashed{p}}$ and $T_4 = \gamma_5\,[\hat{\slashed{P}} ,{\slashed{p}}]$ in Dirac-space. 
+	Here we use the normalised total momentum $\hat{P}$ of the pion and the orthogonalised relative momentum $p$ between quark and antiquark, 
+	i.e. $\hat{P}\cdot \hat{P} = 1$ and $p\cdot P=0$.\\
+	The Pauli-Lubanski vector (see e.g. Maggiore, chapter 2.7) can be used to determine the spin and angular momentum quantum numbers of these tensors in the rest frame of the pion. Its square can be separated in a part referring to angular momentum and a part referring to spin:
+	\begin{align}
+        L^2 &= 2 p^\alpha \frac{\partial}{\partial p^\alpha} + \left( p_T^\alpha \,p_T^\beta - p_T^2 \,T_p^{\alpha \beta} \right)\frac{\partial}{\partial p^\alpha} \frac{\partial}{\partial p^\beta} \\
+        [S^2]_{i,j}^{k,l} &= \frac{3}{2} \mathbb{1}_{i,j} \otimes \mathbb{1}_{k,l} - \frac{1}{2} \left(\gamma_T^\mu \gamma_5 \hat{\slashed{P}} \right)_{i,j} \otimes \left(\hat{\slashed{P}} \gamma_5  \gamma_T^\mu \right)_{k,l}
+	\end{align}	
+	Here, $\gamma_T^\mu = \gamma^\mu - \hat{P}^\mu \hat{\slashed{P}}$, $p_T^\alpha = p^\alpha -\hat{P}^\alpha \,p \cdot P$ and
+	$T_p^{\alpha \beta} = \delta^{\alpha \beta} - p^\alpha p^\beta /p^2$.
+	
+
+\begin{enumerate}
+	\item Show that $T_1$ and $T_2$ are s-waves (eigenvalue 0 of $L^2$), whereas $T_3$ and $T_3$ are p-waves (eigenvalue 1 of $L^2$).
+	
+	\begin{solution}
+	\begin{align}
+		L^2 T_1	&= L^2 \gamma_5\,\mathbf{1} = 0\\	
+		L^2 T_2	&= L^2 \gamma_5\,\hat{\slashed{P}} = 0\\	
+		L^2 T_3	&= L^2 \gamma_5\,    {\slashed{p}} = \gamma_5\, 2 p^\alpha \gamma^\mu \delta_{\alpha \mu} = 2 \gamma_5\,\slashed{p}\\
+		L^2 T_4	&= L^2 \gamma_5\,[\hat{\slashed{P}} ,{\slashed{p}}] = \gamma_5\,2 [\hat{\slashed{P}} ,\gamma^\mu \delta_{\alpha \mu}] = 2 \gamma_5\,[\hat{\slashed{P}} ,{\slashed{p}}]
+	\end{align}	
+    \end{solution}
+
+	\item Show that $T_1$ has eigenvalue 0 wrt. $S^2$. (The same is true for $T_2$.) \\
+	{\em Hint: $\gamma_T^\mu  \gamma_T^\mu = 3$}
+	
+	\begin{solution}
+	\begin{align}
+		[S^2]_{i,j}^{k,l} [\gamma_5]_{j,k} &= \frac{3}{2} [\gamma_5]_{i,l} - \frac{1}{2} [\gamma_T^\mu \gamma_5 \hat{\slashed{P}}
+		\gamma_5 \hat{\slashed{P}} \gamma_5  \gamma_T^\mu]_{i,l} \\
+            &= \frac{3}{2} [\gamma_5]_{i,l} - \frac{1}{2} [\gamma_T^\mu  \gamma_T^\mu \gamma_5]_{i,l} \\
+            &= \frac{3}{2} [\gamma_5]_{i,l} - \frac{3}{2} [\gamma_5]_{i,l} = 0 
+        \end{align}	
+    \end{solution}
+
+	\item Show that $T_3$ has eigenvalue 1 wrt. $S^2$. 
+	    (The same is true for $T_4$, but this calculation is rather lengthy...)\\
+	{\em Hint: Use $p \cdot P = 0$ and $\slashed{p} \gamma_T^\mu  = -\gamma_T^\mu \slashed{p} + 2 p^\mu$}
+	
+	\begin{solution}
+	\begin{align}
+	[S^2]_{i,j}^{k,l} [\gamma_5 \slashed{p}]_{j,k} &= \frac{3}{2} [\gamma_5 \slashed{p}]_{i,l} 
+	     - \frac{1}{2} [\gamma_T^\mu \gamma_5 \hat{\slashed{P}}
+	\gamma_5 \slashed{p} \hat{\slashed{P}} \gamma_5  \gamma_T^\mu]_{i,l} \\
+	&= \frac{3}{2} [\gamma_5 \slashed{p}]_{i,l} - \frac{1}{2} [\gamma_T^\mu  \hat{\slashed{P}}
+	 \slashed{p} \hat{\slashed{P}} \gamma_T^\mu \gamma_5]_{i,l} \\
+	&= \frac{3}{2} [\gamma_5 \slashed{p}]_{i,l} - \frac{1}{2} [\gamma_T^\mu  \gamma_T^\mu \gamma_5 \slashed{p}]_{i,l} + [ \gamma_T^\mu p_\mu \gamma_5] \\
+	&= (\frac{3}{2} + \frac{3}{2} - 1) [\gamma_5 \slashed{p}]_{i,l}  =  2 [\gamma_5 \slashed{p}]_{i,l}
+    \end{align}	
+    \end{solution}
+	      
+	
+	
+	
+\end{enumerate}

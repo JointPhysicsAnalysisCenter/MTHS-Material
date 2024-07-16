@@ -12,14 +12,54 @@
 \morning
 
 \material{
-    \item Partial waves
-    \item Analyticity
-    \item Unitarity
+    \item Intro to EFT (general idea, integrating out heavy particles, renormalization in QFT, power counting, the principles of an EFT)
+    \item Intro to ChPT (chiral symmetry of QCD, effective Lagrangian for pions, generalization to the nucleon sector, HB expansion)
+    \item Beyond perturbation theory: Pionless EFT for two nucleons (renormalization conditions and power counting schemes)
+    \item Intro to chiral EFT for few-nucleon systems (low-energy theorems and the MERE, KSW approach for perturbative pions, nonperturbative inclusion of pions, renormalization, methods to derive nuclear forces)
 }{
-    \item Book 1, \href{ref_inspire}{inspire}
-    \item Book 2, \href{ref_amazon}{amazon}
-    \item A good review, \href{inspire}{inspire}
-    \item A good aper, \href{inspire}{inspire}
+    \item Feynman diagrams and formulary of QFT:
+    K. Kumeric, Feynman Diagrams for Beginners, arXiv:1602.04182 [physics.ed-ph]
+    
+    \item EFTs:
+    \begin{itemize}
+    \item
+    Antonio Pich, Effective Field Theory, hep-ph/9806303
+    \item
+    Ira Rotstein, TASI lectures on effective field theories, hep-ph/0308266
+    \item
+    David Kaplan, Five lectures on effective field theory, nucl-th/0510023
+    \item
+    Aneesh Manohar, Introduction to Effective Field Theories, arXiv:1804.05863 [hep-ph]
+    \item
+    Matthias Neubert, Renormalization Theory and EFTs, arXiv:1901.06573 [hep-ph]
+    \item
+    \end{itemize}
+    \item ChPT Reviews:
+    \begin{itemize}
+    \item
+    Bernard, Kaiser, Meißner, Int. J. Mod. Phys. E4 (1995) 193
+    \item
+    Pich, Rep. Prog. Phys. 58 (1995) 563
+    \item
+    Bernard, Prog. Part. Nucl. Phys. 60 (2007) 82
+    \item
+    Scherer, Prog. Part. Nucl. Phys. 64 (2010) 1
+    \end{itemize}
+    \item ChPT Lectures:
+    \begin{itemize}
+    \item
+    Scherer, Adv. Nucl. Phys. 27 (2003) 277
+    \item
+    Gasser, Lect. Notes Phys.  629 (2004) 1
+    \item
+    Text books:
+    \item
+    Scherer, Schindler, A Primer for Chiral Perturbation Theory, Springer, Lecture Notes in Physics, 2012
+    \item
+    Meißner, Rusetsky, Effective Field Theories
+    \end{itemize}
+    \item Chiral EFT for few-N:
+    Epelbaum, Nuclear forces from chiral effective field theory: A primer, arXiv:1001.3229 [nucl-th]
 }
 
 \afternoon
@@ -39,7 +79,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{darkred}{rgb}{0.55, 0.0, 0.0}
 \definecolor{debianred}{rgb}{0.84, 0.04, 0.33}
-
 
 \subsection{Field redefinition}
 
@@ -118,9 +157,7 @@ We will consider the following (classic) Lagrangian:
 \end{eqnarray}
 consisting of four real scalar fields $\Phi=(\Phi_1,\Phi_2,\Phi_3,\Phi_4)$, with $\lambda>0$.
 
-This model has an SO(4) symmetry, while quantum chromodynamics with two massless quarks has an SU(2)$\times$SU(2) symmetry, corresponding to isospin rotations done separately on the left handed and right handed component of the quark fields. Because SO(4) is isomorphic to SU(2)$\times$SU(2), the linear sigma model has the same symmetry group as the strong interaction (in the case of two massless quarks).
-%\comment{Is it globally the \underline{same} or only locally (same Lie argebra but double cover etc.)?}
-
+This model has an SO(4) symmetry, while quantum chromodynamics with two massless quarks has an SU(2)$\times$SU(2) symmetry, corresponding to isospin rotations carried out independently on the left handed and right handed component of the quark fields. Because SO(4) is isomorphic to SU(2)$\times$SU(2), the linear sigma model has the same symmetry group as the strong interaction (in the case of two massless quarks).
 
 Now consider $m^2<0$, i.e., $-m^2=\mu^2$ and convince yourself that the Lagrangian in Eq.~\eqref{eq:L} is equivalent to
 %\comment{DM: Task without points}
@@ -324,9 +361,11 @@ We can rewrite the Lagrangian in terms of the fields $\sigma$ and $\pi$, which a
               \nonumber
               \\
           \end{eqnarray}
-          Now show that $\frac{1}{l^2\left(l^2-2\mu^2\right)} = \frac{1}{2\mu^2}\left(\frac{1}{l^2-2\mu^2}-\frac{1}{l^2} \right)$.~Use your results and write the self-energy as $\Sigma_{a}+\Sigma_{b}+\Sigma_{c}+\Sigma_{d}+\Sigma_{e} = \lambda \delta_{i j} \left(  \alpha I^1 + \beta I^2 \right)$, where $\alpha$ and $ \beta $ are expected to be zero.
+
+Use your results and make partial fraction decomposition to write the self-energy as $\Sigma_{a}+\Sigma_{b}+\Sigma_{c}+\Sigma_{d}+\Sigma_{e} = \lambda \delta_{i j} \left(  \alpha I^1 + \beta I^2 \right)$, and show that $\alpha = \beta = 0$.
 \end{itemize}
-\emph{Remark:} That pions are massless even beyond the classical (tree level) calculation  is a non-trivial characteristic and is due to the SSB, which ``protects'' the (zero) pion mass.
+\emph{Remark:} That pions are massless even beyond the classical (tree level) calculation is a non-trivial feature and is due to the SSB, which ``protects'' the (zero) pion mass.
+
 \begin{itemize}
     \item[(d)] Compute the scattering amplitude for
           $\pi_i(p_1) \pi_j(p_2) \rightarrow \pi_k(p_3) \pi_l(p_4)$
@@ -334,8 +373,7 @@ We can rewrite the Lagrangian in terms of the fields $\sigma$ and $\pi$, which a
           %to leading order in $\lambda$. 
           Show that these diagrams sum up to zero at the threshold $\vec{p}_i=\vec{0}$.
 \end{itemize}
-\emph{Remark:} It is a general feature that the interactions of Goldstone bosons vanish for low energies.~This is the foundation for the construction of \emph{Chiral Perturbation Theory}, where all pion interaction terms have to contain derivatives.
-%\comment{Is this too much simplification? Are there not terms in the ChPT Lagrangian expanded in the pion fields that are derivative-less?!}
+\emph{Remark:} It is a general feature that the interactions of Goldstone bosons vanish for low energies.~This is the foundation for the construction of \emph{Chiral Perturbation Theory}, where all pion interaction terms are either suppressed by insertions of the quark masses (explicit chiral symmetry breaking terms) or have to contain derivatives.
 
 \subsection{Compensator field for chiral transformations}
 \noindent
@@ -356,7 +394,7 @@ The pion fields $(\pi^0, \pi^+, \pi^-)$ are conveniently expressed in the chiral
     %\pi^1& =& \frac{1}{\sqrt{2}} \left( \pi^+ + \pi^- \right),\, \pi^2 = \frac{i}{\sqrt{2}} \left( \pi^+ -\pi^- \right),\, \pi^3 =  \pi^0.
     \label{PhyIso}
 \end{eqnarray}
-In the two-flavor sector the pion fields $\pi^a$ appear in the Lagrangian via the matrix $U = u^2$, which can be parametrized as follows
+In the two-flavor sector, the pion fields $\pi^a$ appear in the Lagrangian via the matrix $U = u^2$, which can be parametrized as follows:
 \begin{eqnarray}
     U
     &=&
@@ -364,7 +402,7 @@ In the two-flavor sector the pion fields $\pi^a$ appear in the Lagrangian via th
     \label{a1244}
     \,,
 \end{eqnarray}
-where $\alpha$ is an arbitrary constant which reflects the freedom in the parametrizing the matrix $U$, $\tau^a$ are the Pauli matrices and $F$ is the pion decay constant in chiral limit.~
+where $\alpha$ is an arbitrary constant which reflects the freedom in parametrizing the matrix $U$, $\tau^a$ are the Pauli matrices and $F$ is the pion decay constant in the chiral limit.~
 
 The pionic matrix $U$ transforms under  chiral rotations as follows:
 \begin{eqnarray}
@@ -372,13 +410,13 @@ The pionic matrix $U$ transforms under  chiral rotations as follows:
     \mapsto  L U R^\dagger
     \,,
 \end{eqnarray}
-where $R$ and $L$ are spacetime-dependent $SU(2)$ matrices.~From the above equation, it follows that the matrix $u$ transforms under chiral rotations as follows:
+where $R$ and $L$ are spacetime-independent $SU(2)$ matrices.~From the above equation, it follows that the matrix $u$ transforms under global chiral rotations as follows:
 \begin{eqnarray}
     u
     \mapsto  u^\prime = \sqrt{L u R^\dagger} \equiv L u h^{-1} = h u R^\dagger
     \,,
 \end{eqnarray}
-where the unitary matrix $h = h(L, R, U) = \sqrt{L U R^\dagger}^{-1} L \sqrt{U}$ is sometimes referred to as a compensator field.
+where the spacetime-dependent unitary matrix $h = h(L, R, U) = \sqrt{L U R^\dagger}^{-1} L \sqrt{U}$ is sometimes referred to as a compensator field.
 
 Calculate the explicit form of the compensator field $h$ for infinitesimal chiral transformations using Eq.~(\ref{a1244}) and keeping only terms that are at most linear in the pion fields.~Verify also that $h$ indeed reduces to the isospin transformation for $L = R = V$.
 
@@ -407,7 +445,7 @@ Consider the free fermion Lagrangian
 where the two-component field vector $\Psi := (p,n)^T$ is build of the proton field $p$ and neutron field $n$ which themselves are Dirac spinors, such that $\Psi$ has two indices. It transforms under isospin via the fundamental representation as follows:
 \begin{equation}
     \label{eq:transformation_isospin}
-    \Psi(x) \rightarrow \Psi'(x) = \Psi(x) + i \epsilon^i \frac{\tau_i}{2} \Psi(x) = \Psi(x) + i \vec\epsilon \cdot \frac{\vec\tau}{2} \Psi(x) .
+    \Psi(x) \rightarrow \Psi'(x) = \Psi(x) + i \epsilon_i \frac{\tau_i}{2} \Psi(x) = \Psi(x) + i \vec\epsilon \cdot \frac{\vec\tau}{2} \Psi(x) .
 \end{equation}
 The (components of the) fermion field operators $\Psi$ must obey the anticommutation relations
 \begin{equation}
@@ -415,7 +453,7 @@ The (components of the) fermion field operators $\Psi$ must obey the anticommuta
     \{\Psi_{r,\alpha}(t,\vec x), \Psi_{s,\beta}^\dagger(t,\vec y)\} = \delta^3(\vec x - \vec y) \delta_{rs} \delta_{\alpha\beta} , \qquad
     \{\Psi_{r,\alpha}(t,\vec x), \Psi_{s,\beta}(t,\vec y)\} = 0 = \{\Psi_{r,\alpha}^\dagger(t,\vec x), \Psi_{s,\beta}^\dagger(t,\vec y)\} ,
 \end{equation}
-where $r,s \in \{1,2\}$ denote isospin indices and $\alpha,\beta \in \{1,2,3,4\}$ denote Dirac indices.~We want to show that the su(2) charge operators\footnote*{Appendix \ref{B:Apendix} contains a discussion that shows how to obtain the charges.} w.r.t.\ $\mathcal{L}$ form a Hilbert space representation of the Lie algebra, i.e.,
+where $r,s \in \{1,2\}$ denote isospin indices and $\alpha,\beta \in \{1,2,3,4\}$ denote Dirac indices.~We want to show that the su(2) charge operators\footnote{Appendix \ref{B:Apendix} contains a discussion that shows how to obtain the charges.} w.r.t.\ $\mathcal{L}$ form a Hilbert space representation of the Lie algebra, i.e.,
 \begin{equation}
     \label{eq:lie_algebra}
     [Q_i(t), Q_j(t)] = i \varepsilon_{ijk} Q_k(t) .
@@ -462,28 +500,10 @@ We want to explicitly prove this in the following.
           Plug this solution back into the full Lagrangian and show that the Lagrangian can be written as follows\footnote{You should transform and simplify the effective Lagrangian such that it is only expressed in multiples of $\phi$, $(\partial_{\mu}\phi)$ and $(\partial^{\mu}\phi)$
               (and is especially free from expressions like $\partial_{\mu}(\phi^2)$ or $\partial_{\mu}\partial^{\mu}\phi$).}
           \begin{align}
-              \L & =\L_0^{\phi}
-              +\frac{1}{2}\left(\frac{\lambda}{2}\frac{1}{-\Box -M^2}\phi^2\right)
-              (-\Box-M^2)
-              \left(\frac{\lambda}{2}\frac{1}{-\Box -M^2}\phi^2\right)
-              -\frac{\lambda}{2}\phi^2 \left(\frac{\lambda}{2}\frac{1}{-\Box -M^2}\phi^2\right)
-              \\
-              %&=\L_0^{\phi}
-              %+\frac{\lambda^2}{8}\left( \frac{1}{-\Box -M^2}\phi^2\right) \phi^2
-              %-\frac{\lambda^2}{4}\phi^2 \frac{1}{-\Box -M^2}\phi^2
-              %\\
-                 & =\L_0^{\phi}-\frac{\lambda^2}{8}\phi^2 \frac{1}{-\Box -M^2}\phi^2
-              \\
-                 & =\L_0^{\phi}+\frac{\lambda^2}{8}\frac{1}{M^2}\phi^2 \frac{1}{1+\frac{\Box}{M^2}}\phi^2
+              \L & =\L_0^{\phi}+\frac{\lambda^2}{8}\frac{1}{M^2}\phi^2 \frac{1}{1+\frac{\Box}{M^2}}\phi^2
               \,.
           \end{align}
-          Using the following expansion
-          \begin{gather}
-              \left(1+\frac{\Box}{M^2}\right)^{-1}
-              =1-\frac{\Box}{M^2}+\left(\frac{\Box}{M^2}\right)^2
-              +\O\left(\frac{1}{M^6}\right)
-          \end{gather}
-          show that the effective Lagrangian up to and including order $(1/M)^4$ can be written as\footnote{Note that you can do integration by parts in the Lagrangian, without changing physics, because there appears an integral in the action $S=\int\dd^ 4 x \L$ and the field are expected to vanish for large $x$.}
+          Use the formal Taylor expansion in $\frac{\Box}{M^2}$ to show that the effective Lagrangian up to and including order $(1/M)^4$ can be written as\footnote{Note that you can do integration by parts in the Lagrangian, without changing physics, because there appears an integral in the action $S=\int\dd^ 4 x \L$ and the field are expected to vanish for large $x$.}
           \begin{gather}
               \L_{\text{eff}}=
               \frac{1}{2}\partial_{\mu}\phi\partial^{\mu}\phi
@@ -658,6 +678,5 @@ In this case, the Noether current \eqref{eq:noether_current} simplifies to $j^\m
     \partial_\mu j^\mu_a = -\frac{\partial(\delta \mathcal{L})}{\partial \epsilon_a} ,
 \end{align}
 which in this form can be a very convenient tool, because $\delta \mathcal{L}$ can be easily computed for a given transformation. Moreover, the method also works for ``non-conserved currents'' $\partial_\mu j^\mu_a \neq 0 \neq \delta \mathcal{L}$, i.e., if the transformation is not a symmetry.
-
 
 \end{document}

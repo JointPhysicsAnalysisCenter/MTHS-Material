@@ -1,0 +1,24 @@
+Cartesian tensors are tensors in three-dimensional Euclidean space. The available tensors are: \begin{itemize}
+    \item Rank 0: 1
+    \item Rank 1: $k^i$
+    \item Rank 2: $k^i k^j$, $delta^{ij}$, $\epsilon^{ijl} k_l$
+    \item Rank 3: $\epsilon^{ijl}$
+    \item Rank 4: combinations of all the above
+\end{itemize}
+
+\begin{enumerate}
+    \item  Show that $\epsilon^{ijl} k_j k_l$ is not a rank 1 tensor.
+    \item  Show that $\nabla \times (\nabla \times \mathbf{A}) = \nabla (\nabla \cdot \mathbf{A}) - \nabla^2 \mathbf{A}$, using the following property: $(\mathbf{A} \times \mathbf{B})^i = \epsilon^{ijl} A_{j}B_{i}$
+          \textbf{Hint}:
+          \begin{align}
+              \epsilon_{ijl} \epsilon_{ij'l'} = \delta_{jj'} \delta_{ll'}- \delta_{jl'}\delta_{j'l}
+          \end{align}
+    \item Given $\int d^3 k \, f(k) \, k^i = 0$ for a scalar function  $f(k)$. Show that:
+          \begin{align}
+              \int d^3 k \, f(k) \, k^i k^j = \frac{1}{3} \delta^{ij} \int d^3 k \, f(k) \, k^2\,.
+          \end{align}
+    \item Show that
+          \begin{align}
+              \int d^3 k \, f(k, \hat{p}) \, k^i k^j = \frac{1}{2} \int d^3 k \, f\left[k^2 - (k \cdot \hat{p})^2\right] \delta^{ij} + \frac{1}{2} \int d^3 k \, f\left[3(k \cdot \hat{p})^2 - k^2\right] \hat{p}^i \hat{p}^j\,.
+          \end{align}
+\end{enumerate}

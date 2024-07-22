@@ -1,0 +1,13 @@
+We are gonna study now how bias arises and how to correct it with the Jackknife. First, given our original sample $x$, with mean $\langle x \rangle =X$, we note that, unless the function $f$ is linear
+\begin{equation}
+\langle f(x) \rangle \neq f(X).
+\end{equation}
+We call the difference between these two quantities bias. In practice, in a sampling problem $X$ is not exactly known but approximated via the number of samples in $x$. We would like to propagate this information to our final observables without introducing statistical bias. 
+First, by  expanding the difference between $f(x)$ and $f(X)$ to second order, prove that the bias is proportional to the variance $\sigma^2$ of $x$.
+%using that $\langle f\rangle=\int P(x)f(x) d x$ and by
+In the Jackknife we have
+\begin{equation}
+\widehat{x}_i \equiv \frac{1}{N-1} \sum_{k \neq i} x_k=X+\frac{1}{N-1} \sum_{k \neq i} \delta x_k \quad  \delta x_k=x_k-X.
+\end{equation}
+
+Now, using that $\widehat{f}_i=f(\widehat{x}_i)$, expand it to second order again and prove that $\langle \widehat{f}_i \rangle-f(X)=\frac{1}{2(N-1)} f^{\prime \prime}(X) \sigma^2$, the bias is now of order $\mathcal{O}(1/N)$. Is there a way you can combine both results to reduce the bias an extra order?

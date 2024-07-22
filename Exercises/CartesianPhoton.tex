@@ -5,17 +5,100 @@ Consider photons (or gluons) in Cartesian basis so $a^+_{k_{i}} = \sum_\lambda a
                   | \gamma\gamma; 0^+ \rangle \propto \int d^3 k \, \phi(k) \, a^+_{k_{i}}a^+_{-k_{i}}| 0 \rangle\,,
             \end{align}
             where $\phi(k)$ is the momentum wave function.
+
+            \begin{solution}
+                  Apply the parity operator $P$:
+                  $$ \int d^3 k \, \phi(k) \,P a^+_{k_i} P^+P a^+_{k_i} P^+| 0 \rangle = \int d^3 k \, \phi(k) \, (-a^+_{-k_i}) (-a^+_{k_i}) | 0 \rangle$$
+                  Now take $k \to -k$ then:
+
+                  $$\int d^3 k \, \phi(-k) \, (-a^+_{k_i}) (-a^+_{-k_i}) | 0 \rangle=(\mathbf{+})\int d^3 k \, \phi(k) \, (a^+_{k_i})a^+_{-k_i}) | 0 \rangle$$
+                  since $ \phi(k)$ is a symmetric function (scalar), $\phi(k) = \phi(-k)$.
+                  Thus, we arrived to the desired state $ | \gamma\gamma; 0^+ \rangle$ which is invariant under parity as expected for scalar states.
+            \end{solution}
+
       \item Show that:
             \begin{align}
                   | \gamma\gamma; 0^- \rangle \propto \int d^3 k \, \phi(k) \,\epsilon_{ijl} k^l a^+_{k_{i}}a^+_{-k_{j}}| 0 \rangle\,.
             \end{align}
 
+            \begin{solution}
+                  Apply the parity operator $P$:
+                  $$ \int d^3 k \, \phi(k) \, \epsilon_{ijl} k^l P a^+_{k_i} P^+P a^+_{-k_j} P^+| 0 \rangle  = \int d^3 k \, \phi(k) \, \epsilon_{ijl} k^l (-a^+_{-k_i}) (-a^+_{k_j}) | 0 \rangle$$
+                  \begin{enumerate}
+                        \item First way: we take $k \to -k$ then
+                              \begin{align*}
+                                    \int d^3 k \, \phi(k) \, \epsilon_{ijl} k^l P a^+_{k_i} P^+P a^+_{-k_j} P^+| 0 \rangle & = \int d^3 k \, \phi(k) \, \epsilon_{ijl} (-k^l) (a^+_{k_i}) (a^+_{-k_j}) | 0 \rangle \\
+                                                                                                                           & =-\int d^3 k \, \phi(k) \, \epsilon_{ijl} k^l (a^+_{k_i}) (a^+_{-k_j}) | 0 \rangle
+                              \end{align*}
+                        \item  Second way: Use the antisymmetric property of $\epsilon_{ijl}$ i.e. (flipping $i\leftrightarrow j$) where:
+                              $$ \epsilon_{ijl} k^l (a^+_{-k_i}) (a^+_{k_j}) = - \epsilon_{ijl} k^l (a^+_{k_i}) (a^+_{-k_j}) $$
+                              Thus, we arrived to the desired state: $ | \gamma\gamma; 0^-\rangle$ which is also invariant under parity.
+                  \end{enumerate}
+            \end{solution}
+
       \item Prove the Lee-Yang theorem which states that one cannot construct a $J = 1$, $\gamma\gamma$  state.
+
+            \begin{solution}
+                  We seek a rank 1 Cartesian tensor then:\\
+                  $$  | \gamma\gamma; J=1\,; l \rangle = \int d^3 k \, \phi_{lij}(k) \, a^+_{k_{i}}a^+_{-k_{j}}| 0 \rangle\,,$$
+                  We must have:
+                  $$\phi_{lij}(k)= \phi(k) t_{lij}+ \chi(k)\delta_{ij}k^l\,,$$
+                  then
+                  \begin{align*}
+                        | \gamma\gamma; J=1\,;l \rangle & = \int d^3 k \, [\phi(k) t_{lij}+ \chi(k)\delta_{ij}k^l] \, a^+_{k_{i}}a^+_{-k_{j}}| 0 \rangle        \\
+                        k\to-k                          & =\int d^3 k \, [\phi(-k) t_{l_{ij}}+\chi(-k)\delta_{ij} (-k^l)] \, a^+_{-k_{i}}a^+_{k_{j}}| 0 \rangle \\
+                                                        & =\int d^3 k \, [-\phi(k) t_{lij}-\chi(k)\delta_{ij} k^l] \, a^+_{-k_{i}}a^+_{k_{j}}| 0 \rangle        \\
+                                                        & =- \int d^3 k \, [\phi(k) t_{lij} +\chi(k)\delta_{ij} k^l] \, a^+_{k_{i}}a^+_{-k_{j}}| 0 \rangle      \\
+                                                        & =- | \gamma\gamma; J=1 \,;l \rangle
+                  \end{align*}
+                  Therefore $ | \gamma\gamma; J=1 \,;l \rangle=0$, which validates Lee-Yang theorem that we cannot construct a $J=1$ $\gamma\gamma$ state.\\
+                  \textbf{Remark:} Note that here $\phi(-k)=-\phi(k)$ since it is not scalar in this case, $\chi (-k)=\chi(k)$ (scalar), and $ a^+_{-k_{i}}a^+_{k_{j}}= a^+_{k_{i}}a^+_{-k_{j}}$ since the creation operators commutes in the case of Bosons (photons).
+            \end{solution}
+
       \item  Show that:
             \begin{align}
                   | \gamma\gamma\gamma; 0^- \rangle= \int d^3 k_1 d^3 k_2 d^3 k_3 \, \phi(k_1k_2k_3) \, \epsilon_{i_1i_2i_3}\delta(k_1k_2k_3) a^+_{k_{1}i_1}a^+_{k_{2}i_2}a^+_{k_{3}i_3}| 0 \rangle\,,
             \end{align}
             is a viable state.
+
+            \begin{solution}
+                  Apply the parity operator $P$:
+
+                  \begin{align*}
+                               & \int d^3 k_1 d^3 k_2 d^3 k_3 \, \phi(k_1 k_2 k_3) \, \epsilon_{i_1 i_2 i_3} \delta(k_1 + k_2 + k_3) Pa^+_{k_{1}i_1}P^+ P a^+_{k_{2} i_2}P^+P a^+_{k_{3} i_3}P^+ | 0 \rangle         \\&=-\int d^3 k_1 d^3 k_2 d^3 k_3 \, \phi(k_1 k_2 k_3) \, \epsilon_{i_1 i_2 i_3} \delta(k_1 + k_2 + k_3) a^+_{-k_{1} i_1}a^+_{-k_{2} i_2}a^+_{-k_{3} i_3}| 0 \rangle\\
+                        k\to-k & =-\int d^3 k_1 d^3 k_2 d^3 k_3 \, \phi\left((-k_1)(-k_2)(-k_3)\right) \, \epsilon_{i_1 i_2 i_3} \delta(-k_1 -k_2 -k_3) a^+_{k_{1} i_1} a^+_{k_{2} i_2} a^+_{k_{3} i_3}) | 0 \rangle \\
+                               & =- \int d^3 k_1 d^3 k_2 d^3 k_3 \, \phi(k_1k_2k_3) \, \epsilon_{i_1i_2i_3}\delta(k_1k_2k_3) a^+_{k_{1}i_1}a^+_{k_{2}i_2}a^+_{k_{3}i_3}| 0 \rangle
+                  \end{align*}
+                  Thus, this state is a valid state.
+            \end{solution}
+
       \item  Can we construct a $| \gamma\gamma\gamma; 1^- \rangle$ state?
             (\textbf{Hint:}     $Pa^+_{k_i}P^+=-a^+_{-k_i}$)
+
+            \begin{solution}
+                  We seek to combine 3 vectors to form a vector state. Consider the angular momentum of three photons.
+                  \begin{itemize}
+                        \item Combining Angular Momenta:\\
+                              - Start by combining two vectors to form an intermediate state.\\
+                              - In the case of three vectors $ \mathbf{k}_1 $, $ \mathbf{k}_2$, and $ \mathbf{k}_3$, we can form the combinations:
+                              $$     (\mathbf{k}_1 \times \mathbf{k}_2)_s = (\mathbf{k}_1 \mathbf{k}_2) + (\mathbf{k}_2 \mathbf{k}_1)
+                              $$
+                              - This is symmetric in space.
+                        \item Cross Product for Antisymmetry:\\
+                              - To obtain a $ 1^- $ state, we need an antisymmetric combination.\\
+                              - Take the cross product of the intermediate state with the third vector $\mathbf{k}_3 $:$(\mathbf{k}_1 \times (\mathbf{k}_2 \times \mathbf{k}_3))$
+                        \item Constructing the State:\\
+                              -Combine all three vectors in such a way that respects the antisymmetry needed for a $ 1^-$ state.
+                              $$\int d^3 k_1 \, d^3 k_2 \, d^3 k_3 \, \phi(k_1 k_2 k_3) \, \epsilon_{i_1 i_2 i_3} \delta(k_1 + k_2 + k_3) a^+_{k_{1} i_1} a^+_{k_{2} i_2} a^+_{k_{3} i_3} | 0 \rangle$$
+                        \item Symmetry Considerations:\\
+                              - This state is symmetric under permutations of the three momenta \( \mathbf{k}_1 \), \( \mathbf{k}_2 \), and \( \mathbf{k}_3 \).\\
+                              - The use of \(\epsilon_{i_1 i_2 i_3}\) ensures the antisymmetry necessary for a pseudoscalar state.
+                        \item  Parity Check:\\
+                              - Under parity, the creation operator transforms as $$ P a^+_{k_i} P^+ = -a^+_{-k_i} $$.
+                              - The state under parity transforms as:
+                              $$P | \gamma\gamma\gamma; 1^- \rangle = (-1)^3 | \gamma\gamma\gamma; 1^- \rangle = -| \gamma\gamma\gamma; 1^- \rangle$$ (same as part(d))
+                  \end{itemize}
+                  This confirms that  possibility of constructing a $| \gamma\gamma\gamma; 1^- \rangle$ state using the above considerations.
+            \end{solution}
+
 \end{enumerate}

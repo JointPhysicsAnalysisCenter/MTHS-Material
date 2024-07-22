@@ -8,17 +8,92 @@ Cartesian tensors are tensors in three-dimensional Euclidean space. The availabl
 
 \begin{enumerate}
     \item  Show that $\epsilon^{ijl} k_j k_l$ is not a rank 1 tensor.
+
+          \begin{solution}
+              The Levi-Civita tensor $\epsilon^{ijl}$ is antisymmetric under the exchange of any two indices, i.e. $\epsilon^{ijl} = -\epsilon^{ilj}$. Then
+              $$\epsilon^{ijl} k_j k_l = -\epsilon^{ilj} k_l k_j$$ and since the product of two components of the same vector is commutative thus $k_j k_l = k_l k_j$  we have:
+              $$\epsilon^{ijl} k_j k_l = -\epsilon^{ilj} k_j k_l$$
+              This implies:
+              $$\epsilon^{ijl} k_j k_l = 0$$
+              Therefore, $\epsilon^{ijl}k_jk_l $ is identically zero and does not form a valid rank $1$   tensor (does not behave as rank $1$ tensor).
+          \end{solution}
+
     \item  Show that $\nabla \times (\nabla \times \mathbf{A}) = \nabla (\nabla \cdot \mathbf{A}) - \nabla^2 \mathbf{A}$, using the following property: $(\mathbf{A} \times \mathbf{B})^i = \epsilon^{ijl} A_{j}B_{i}$
           \textbf{Hint}:
           \begin{align}
               \epsilon_{ijl} \epsilon_{ij'l'} = \delta_{jj'} \delta_{ll'}- \delta_{jl'}\delta_{j'l}
           \end{align}
+
+          \begin{solution}
+              Starting with the vector identity:
+              $$(\mathbf{A} \times \mathbf{B})^i = \epsilon^{ijl} A_j B_l $$
+              Let $\mathbf{C} = \nabla \times \mathbf{A}$, then:
+              $$ C^i = (\nabla \times \mathbf{A})^i = \epsilon^{ijl} \partial_j A_l$$
+              Now, consider the curl of $\mathbf{C}$, and use the property of the Levi-Civita symbol:
+              \begin{align*}
+                  (\nabla \times \mathbf{C})^i & = \epsilon^{imn} \partial_m C_n = \epsilon^{imn} \partial_m (\epsilon^{njl} \partial_j A_l)        \\
+                                               & =\epsilon^{imn}\epsilon^{njl}  \partial_m \partial_j A_l                                           \\
+                                               & =(\delta^{ij} \delta^{ml} - \delta^{il} \delta^{mj})\partial_m \partial_j A_l                      \\
+                                               & =\partial_i \partial_l A_l - \partial_j \partial_j A_i                                             \\
+                                               & =\nabla \times (\nabla \times \mathbf{A}) = \nabla (\nabla \cdot \mathbf{A}) - \nabla^2 \mathbf{A}
+              \end{align*}
+          \end{solution}
+
     \item Given $\int d^3 k \, f(k) \, k^i = 0$ for a scalar function  $f(k)$. Show that:
           \begin{align}
               \int d^3 k \, f(k) \, k^i k^j = \frac{1}{3} \delta^{ij} \int d^3 k \, f(k) \, k^2\,.
           \end{align}
+
+          \begin{solution}
+              By symmetry, the integral $\int d^3 k \, f(k) \, k^i k^j$ must be proportional to $\delta^{ij}$ because the left-hand side is a rank 2 tensor and the only isotropic rank 2 tensor is proportional to $\delta^{ij}$, then:
+              $$\int d^3 k \, f(k) \, k^i k^j = A \delta^{ij} $$
+              To find $A$, take the trace:
+              $$\int d^3 k \, f(k) \, k^i k^i = A \delta^{ii}$$
+              Since $\delta^{ii} = 3$, we have:
+              $$\int d^3 k \, f(k) \, k^2 = 3A$$
+              So,
+              $$A = \frac{1}{3} \int d^3 k \, f(k) \, k^2$$
+              Thus,
+              $$\int d^3 k \, f(k) \, k^i k^j = \frac{1}{3} \delta^{ij} \int d^3 k \, f(k) \, k^2 $$
+          \end{solution}
+
     \item Show that
           \begin{align}
               \int d^3 k \, f(k, \hat{p}) \, k^i k^j = \frac{1}{2} \int d^3 k \, f\left[k^2 - (k \cdot \hat{p})^2\right] \delta^{ij} + \frac{1}{2} \int d^3 k \, f\left[3(k \cdot \hat{p})^2 - k^2\right] \hat{p}^i \hat{p}^j\,.
           \end{align}
+
+          \begin{solution}
+              The given integral can be split into parts proportional to $\delta^{ij}$ and $\hat{p}^i \hat{p}^j$:
+              $$\int d^3 k \, f(k, \hat{p}) \, k^i k^j = A \delta^{ij} + B \hat{p}^i \hat{p}^j $$
+
+              To find $A$ and $B$, we take the trace and the contraction with $\hat{p}^i \hat{p}^j$:
+              \begin{enumerate}
+
+                  \item Trace:
+                        $$ \delta^{ij} \int d^3 k \, f(k, \hat{p}) \, k^i k^j = A \delta^{ii} + B (\hat{p}^i \hat{p}^i)$$
+                        $$\rightarrow  \int d^3 k \, f(k, \hat{p}) \, k^2 = 3A + B $$
+
+                  \item Contraction with $\hat{p}^i \hat{p}^j$:
+                        $$\hat{p}^i \hat{p}^j \int d^3 k \, f(k, \hat{p}) \, k^i k^j = A (\hat{p} \cdot \hat{p}) + B (\hat{p}^i \hat{p}^j \hat{p}^i \hat{p}^j)$$
+                        $$\rightarrow \int d^3 k \, f(k, \hat{p}) \, (k \cdot \hat{p})^2 = A + B $$
+                  \item Solving for $A$ and $B$:
+                        \begin{align*}
+                            3A + B & = \int d^3 k \, f(k, \hat{p}) \, k^2                 \\
+                            A + B  & = \int d^3 k \, f(k, \hat{p}) \, (k \cdot \hat{p})^2
+                        \end{align*}
+                  \item Subtract the second equation from the first:
+                        \begin{align*}
+                            2A              & = \int d^3 k \, f(k, \hat{p}) \, (k^2 - (k \cdot \hat{p})^2)             \\
+                            \text{Thus~~~}A & = \frac{1}{2} \int d^3 k \, f(k, \hat{p}) \, (k^2 - (k \cdot \hat{p})^2)
+                        \end{align*}
+                  \item Using $A$ in the second equation:
+                        \begin{align*}
+                            B            & = \int d^3 k \, f(k, \hat{p}) \, (k \cdot \hat{p})^2 - A                                                                      \\
+                            B            & = \int d^3 k \, f(k, \hat{p}) \, (k \cdot \hat{p})^2 - \frac{1}{2} \int d^3 k \, f(k, \hat{p}) \, (k^2 - (k \cdot \hat{p})^2) \\
+                            \text{So~~}B & = \frac{1}{2} \int d^3 k \, f(k, \hat{p}) \, (3(k \cdot \hat{p})^2 - k^2)
+                        \end{align*}
+                        Therefore,
+                        $$\int d^3 k \, f(k, \hat{p}) \, k^i k^j = \frac{1}{2} \int d^3 k \, f\left[k^2 - (k \cdot \hat{p})^2\right] \delta^{ij} + \frac{1}{2} \int d^3 k \, f\left[3(k \cdot \hat{p})^2 - k^2\right] \hat{p}^i \hat{p}^j$$
+              \end{enumerate}
+          \end{solution}
 \end{enumerate}

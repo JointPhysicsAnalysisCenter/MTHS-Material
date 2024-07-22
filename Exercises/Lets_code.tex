@@ -3,39 +3,10 @@ MonteCarlo sampled two-point correctors,
 calculated from Wilson lines for a $L=32$ lattice with periodic boundary conditions.
 
 \begin{itemize}
-    \item Close the code repository
-          \begin{verbatim}
-    cd ~/Documents
-    git clone https://github.com/JointPhysicsAnalysisCenter/MTHS-code MTHS-code
-    cd 07-22-Lattice
-    \end{verbatim}
-
-    \item Downloading the folder \texttt{Code/sheet\_7\_code} from within the school's github repo \href{https://github.com/JointPhysicsAnalysisCenter/MTHS-code}{here}
-          \begin{enumerate}
-              \item \textbf{Install Python in a Conda Environment with Dependencies}
-
-                    Make sure you have \texttt{conda} installed. Easiest way for homebrew users is ``brew install --cask anaconda''.
-                    For linux, follow these instructions \href{https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html}{here}
-
-                    Create a new conda environment and install the required packages:
-                    \begin{verbatim}
-    conda create --name lattice-qcd python=3.xxx
-    conda activate lattice-qcd
-    conda install numpy scipy matplotlib iminuit jupyterlab
-    \end{verbatim}
-
-              \item \textbf{Start Jupyter Lab and Open the Notebook}
-              \item
-                    Launch Jupyter Lab from the terminal:
-                    \begin{verbatim}
-    jupyter lab
-    \end{verbatim}
-                    In your web browser, navigate to the Jupyter Lab interface. Open the notebook file inside the folder you just downloaded.
-
-              \item \textbf{Jupyter Notebook Cheat Sheet}
-
-                    For basic commands and shortcuts in Jupyter Notebook, refer to the \href{https://jupyter-notebook.readthedocs.io/en/stable/notebook.html}{Jupyter Notebook Cheat Sheet}.
-          \end{enumerate}
-    \item Once you do so, open the \texttt{.ipynb} inside. Note that the first two cells just load packages and fixed variables, described in the notebook.
-    \item Now, follow the instructions in the notebook to try and obtain a good set of correlated Jackknife fits to the correlators provided in the folder.
+      \item Close the code repository, \href{https://github.com/JointPhysicsAnalysisCenter/MTHS-Code}{https://github.com/JointPhysicsAnalysisCenter/MTHS-Code}
+      \item Navigate to the folder \texttt{07-22-Lattice/} from within the repo
+      \item Install \texttt{conda}, all dependencies of the project following tips on \href{https://github.com/JointPhysicsAnalysisCenter/MTHS-Code}{README.md}
+      \item Launch Jupyter Lab from the terminal
+      \item In your web browser, navigate to the Jupyter Lab interface to `07-22-Lattice/fit_correlators.ipynb`
+      \item Follow the instructions in the notebook to try and obtain a good set of correlated Jackknife fits to the correlators provided in the folder.
 \end{itemize}

@@ -66,7 +66,34 @@
   \csname iffalse\endcsname
 \fi
 \usepackage{latex/shortcuts}
-%\usepackage{latex/babarsym}
+
+\usepackage{braket}
+\usepackage{subcaption} % for subfigure
+\usepackage{dsfont}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,decorations.markings,arrows.meta}
+\newcommand{\myarrow}{\tikz \draw[-Stealth] (0,0);}
+\newcommand{\momright}[1]{\underset{\rightarrow}{#1}}
+\newcommand{\momleft}[1]{\underset{\leftarrow}{#1}}
+\newcommand{\momup}[1]{{#1}{\uparrow}}
+\newcommand{\momdown}[1]{{#1}{\downarrow}}
+\newcommand{\momrightu}[1]{\overset{\rightarrow}{#1}}
+\newcommand{\momleftu}[1]{\overset{\leftarrow}{#1}}
+\newcommand{\momupu}[1]{{\uparrow}{#1}}
+\newcommand{\momdownu}[1]{{\downarrow}{#1}}
+\newcommand{\vertex}[2]{ \draw[fill=white] (#1) circle [radius=0.25cm]node{#2}}
+\newcommand{\vertexb}[1]{ \draw[fill=black] (#1) circle [radius=0.1cm]}
+\newcommand{\vertexw}[1]{ \draw[fill=white] (#1) circle [radius=0.2cm]}
+\newcommand{\vertexSize}[3]{ \draw[fill=white] (#1) circle [radius=#3] node{#2}}
+%styles of lines defined as tikzset (colors optional):
+\tikzset{
+  pion/.style={dashed, color=black},
+  scalarnucleon/.style={solid, color=black},
+  nucleon/.style={postaction={decorate}, decoration={markings,mark=at position .5 with {\arrow[draw=black]{>}}}, color=black},
+  nucleonopposite/.style={postaction={decorate}, decoration={markings,mark=at position .5 with {\arrow[draw=black]{<}}}, color=black},
+  other/.style={decorate,decoration=snake,color=black}
+}
 
 % --- Define Paths
 \newcommand{\expath}{Exercises}
@@ -221,7 +248,7 @@
     \hfill\@subjectcode
     \\[1mm]
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{Figures/QRCode.png}
+      \includegraphics[width=1.1\linewidth]{Figures/bochum-top.jpg}
     \end{minipage}%
     \begin{minipage}[c]{0.68\textwidth} % Adjust the width as needed
       \centering
@@ -240,7 +267,7 @@
 
     \end{minipage}
     \begin{minipage}[c]{0.15\textwidth} % Adjust the width as needed
-      \includegraphics[width=\linewidth]{Figures/QRCode.png}
+      \includegraphics[width=\linewidth]{Figures/qr-mths.png}
     \end{minipage}%
     \\[2mm]
     % dates

@@ -1,0 +1,37 @@
+
+Polarization vectors of a spin-one particle are given by
+\begin{align}
+    \epsilon^\mu_{\pm 1}(\theta) & = \left(0,\mp \frac{\cos \theta}{\sqrt{2}}, -\frac{i}{\sqrt{2}}, \pm \frac{\sin \theta}{\sqrt{2}}\right)\, \\
+    \epsilon^\mu_{0}(\theta)     & = \left(\frac{p}{m}, \frac{E}{m}\sin\theta, 0, \frac{E}{m}\cos\theta \right)
+\end{align}
+
+\begin{enumerate}
+    \item
+          Evaluate the amplitude for the decay of $a_1$ meson ($J^P=1^+$) to $\rho\pi$
+          using the covariant expression, $\mathcal{M} = \epsilon_{a_1} \cdot \epsilon_\rho$
+          in the following frames of reference:
+          \begin{itemize}
+              \item \label{item:a1.rest.z} $a_1$ is at rest and the decay particles are aligned along the $z$-axis,
+              \item $\rho$ is at rest and $a_1$ and $\pi$ are aligned along the $z$-axis, compare to \eqref{item:a1.rest.z}\,.
+          \end{itemize}
+
+          \begin{solution}
+              The first one is $-(1,\gamma_{\rho},1)$, the second one is $-(1,\gamma_{a_1},1)$. Both equal since the two frames are connected by a boost with $\gamma = (m_{a_1}^2+m_\rho^2-m_{\pi}^2 ) / (2m_{a_1}m_{\rho})$.
+          \end{solution}
+    \item
+          Compare three matrix elements in \eqref{item:a1.rest.z} configurations to the expectations from the helicity formalism,
+          \begin{equation}
+              A_{\lambda_{a_1}\lambda_{\rho}}^L = H_{\lambda_\rho,0}^L\,d_{\lambda_{a_1},\lambda_{\rho}}^1(\theta)\,,
+          \end{equation}
+          where the helicity coupling is parametrized in LS scheme reads,
+          \begin{equation}
+              H_{\lambda_\rho,0}^L = \left\langle L,0;1,\lambda_\rho|1,\lambda_\rho\right\rangle\,.
+          \end{equation}
+          Which partial waves are allowed in the decay, and what value of $L$ the covariant matrix $\mathcal{M}$ element correspond to?
+
+          \begin{solution}
+              The S-wave corresponds to $(1,1,1)$, while D-wave is $(1,-2,1)/\sqrt{10}$. Convariant formalism mixes partial waves.
+          \end{solution}
+\end{enumerate}
+
+

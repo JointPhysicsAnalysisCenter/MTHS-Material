@@ -1,7 +1,7 @@
 \documentclass[11pt]{latex/exercise}
 
 \input{latex/opts_mths24} 
-\setlecturers{Laura Tolos / Christian Fischer / Alessandro Pilloni}
+\setlecturers{Laura Tolos / Andrew Jackura}
 \settutors{Andrew Jackura}
 \setsheetnumber{10}
 \setexdate{Thurday, 25 July 2024}
@@ -11,19 +11,58 @@
 
 \morning
 
+
 \material{
-    \item Partial waves
-    \item Analyticity
-    \item Unitarity
+    \item Two-particles quantization condition
+    \item Finite-folume spectrum
+    \item Interacting energy levels from resonances
 }{
-    \item Book 1, \href{ref_inspire}{inspire}
-    \item Book 2, \href{ref_amazon}{amazon}
-    \item A good review, \href{inspire}{inspire}
-    \item A good aper, \href{inspire}{inspire}
+    \item Original L{\"u}scher paper (stable particles): \href{https://inspirehep.net/literature/222569}{inspire} - L{\"u}scher (1985)
+    \item Original L{\"u}scher paper (scattering): \href{https://inspirehep.net/literature/231480}{inspire} - L{\"u}scher (1986)
+    \item Non-rest frames: \href{https://inspirehep.net/literature/393935}{inspire} - Rummukainen \& Gottlieb (1995)
+    \item Field theory approach: \href{https://inspirehep.net/literature/687104}{inspire} - Kim, Sharpe, \& Sachrajda (2005)
+    \item Coupled-channels: \href{https://inspirehep.net/literature/1103067}{inspire} - Hansen \& Sharpe (2012)
+    \item Arbitrary number of channels and spin: \href{https://inspirehep.net/literature/1277082}{inspire} - Briceno (2014)
 }
 
 \afternoon
 
-\importex{PhaseSpaceIII}{Two-body phase space}{}
+\subsection{Two Particles in a Box}
+
+In this problem, we explore the discrete spectrum of two particles in a finite cubic volume and its relation to their infinite volume scattering amplitude.
+\begin{enumerate}
+    \item Enumerate the different momenta (in units of $2\pi / L$) allowed for $\mathbf{n}^2 \in \{0,1,2,3,4,5,6,8,9\}$.
+    \item Take the limit of $E/m$ as $mL \to \infty$.
+    \item \label{lim} Plot the non-interacting spectrum in terms of $E^{\star}/m$ in the rest frame $\mathbf{n}_P = [000]$ as a function of $mL$.
+    \item Repeat \eqref{lim} for the frames $\mathbf{n}_P = [001], [011], [111], [002]$.
+\end{enumerate}
+
+\subsection{Finite-Volume Function}
+
+This problem focuses on the finite-volume function $F(E,\mathbf{P},L)$, which characterizes finite-volume distortions in an interacting system.
+\begin{enumerate}
+    \item Derive $F(E,\mathbf{P},L)$ using the all-orders approach discussed in the lectures. Simplify the result for numerical computation.
+    \item Determine the dimensions of $F$.
+    \item \label{momentum} For a system at total momentum $\mathbf{P} = \mathbf{0}$, plot $F$ as a function of $E^{\star}/m$, $(Lq^{\star}/2\pi)$ for fixed $mL = 4, 5$, and 6.
+    \item Repeat \eqref{momentum} for moving frame systems, $\mathbf{n}_P = [001], [011], [111], [002]$.
+\end{enumerate}
+
+\subsection{Connecting the Finite-Volume Function to the Spectrum}
+
+In this problem we explore how to determine the spectrum of two non-interacting particles by solving $F^{-1} = 0$.
+
+\begin{enumerate}
+    \item \label{spectrum} Find the spectrum of two non-interacting particles in their rest frame by solving $F^{-1} = 0$ for fixed $mL = 4, 5$, and 6.
+    \item Repeat \label{spectrum} for moving frame systems, $\mathbf{n}_P = [001], [011], [111], [002]$.
+\end{enumerate}
+
+\subsection{L{\"u}scher Quantization Condition}
+
+Here, we study the poles of the correlation matrix for interacting particles using the L\"uscher quantization condition.
+\begin{enumerate}
+    \item Show that the imaginary parts of $\mathcal{M}^{-1}$ and $F$ cancel.
+    \item Using the Breit-Wigner and Effective Range parameterizations, investigate the spectrum of an interacting two-particle system.
+\end{enumerate}
+
 
 \end{document}

@@ -55,10 +55,32 @@ where $\alpha(s) = \alpha(0) + \alpha^\prime s$ is a real, linear Regge trajecto
           %%
           Write down the definite-isospin amplitudes in terms of $V$'s. Comment on the symmetry properties of each isospin amplitude with respect to $t \leftrightarrow u$.
 
-
+          \begin{solution}
+              We have:
+              %%
+              \begin{gather}
+                  \mathcal{A}^{(0)}(s,t,u) = \frac{1}{2} \left[ 3 \, V(s,t) + 3\,V(s,u) - V(t,u)\right] \\
+                  \mathcal{A}^{(1)}(s,t,u) = V(s,t) - V(s,u) \\
+                  \mathcal{A}^{(2)}(s,t,u) = V(t,u) ~.
+              \end{gather}
+              %%
+              $I=0,2$ are symmetric in $t\leftrightarrow u$ while $I=1$ is anti-symmetric as required by Bose symmetry.
+          \end{solution}
 
     \item \textbf{Chew-Frautshi plot} \\
           Locate where each $\mathcal{A}^{(I)}(s,t,u)$ will have poles in the $s$-channel physical region. What is their residue? Draw a schematic Chew-Frautschi plot of the resonance spectrum in each isospin channel.
+
+          \begin{solution}
+              A single $V(s,t)$ will have poles at all $\alpha(s) = J\geq 1$ and all possible daughters. The residues are
+              %%  
+              \begin{equation}
+                  - (J-1+\alpha(t)) \, \frac{\Gamma(J-1+\alpha(t))}{\Gamma(J) \, \Gamma(\alpha(t))} = \frac{-1}{\Gamma(J)} \frac{\Gamma(J+\alpha(t))}{\Gamma(\alpha(t))} = - \frac{(\alpha(t))_J}{(J-1)!}.
+              \end{equation}
+              %%
+              For a linear trajectory this is a order $J$ polynomial in $t$ and therefore in $z_s$.
+
+              The symmetry factors in $I=0,1$ will remove all odd (even) $J$ daughters. The $I=2$ amplitude has no $s$ dependence and therefore no isospin-2 poles at all.
+          \end{solution}
 
     \item \textbf{Regge limit} \\
           Now consider the limit $t \to \infty$ and $u \to - \infty$ with $s \leq 0$ is fixed. What is the asymptotic behavior of $V(s,t)$ and $V(s,u)$? Assume that $V(t,u)$ vanishes faster than any power of $s$ in this limit. What is the resulting behavior of the isospin amplitudes $\mathcal{A}^{(I)}(s,t,u)$ in this limit?
@@ -68,6 +90,24 @@ where $\alpha(s) = \alpha(0) + \alpha^\prime s$ is a real, linear Regge trajecto
                   \Gamma(x) \to \sqrt{\frac{2\pi}{x}} \left( \frac{x}{e} \right)^x ~.
               \end{equation}
           }
+
+          \begin{solution}
+              Starting with
+              \begin{equation}
+                  V(s,t)  \to \Gamma(1-\alpha(s)) \, (-\alpha(t))^{\alpha(s)} \sim \Gamma(1-\alpha(s)) \, \left(-\alpha^\prime \, t\right)^{\alpha(s)} ~.
+              \end{equation}
+              Similarly
+              \begin{equation}
+                  V(s,u)  \to \Gamma(1-\alpha(s)) \, (-\alpha(u))^{\alpha(s)} \sim \Gamma(1-\alpha(s)) \, \left(-\alpha^\prime \, t\right)^{\alpha(s)} ~.
+              \end{equation}
+              Thus the combination
+              %%
+              \begin{align}
+                  V(s,t) \pm V(s,u) & \to \Gamma(1-\alpha(s)) \times \left[\left(-\alpha^\prime \, t\right)^{\alpha(s)} \pm \left(-\alpha^\prime \, u\right)^{\alpha(s)} \right] \\
+                                    & = \Gamma(1-\alpha(s)) \times \left[1\pm e^{-i\pi\alpha(s)}\right] \, \left(\alpha^\prime \, t\right)^{\alpha(s)}
+              \end{align}
+              %%
+          \end{solution}
 
     \item \textbf{Ancestors and Strings}\\
           Consider the model now with a complex trajectory $\alpha(s) = a_0 + \alpha^\prime \, s + i \,\Gamma$ with $\Gamma > 0$ to move the poles off the real axis. Reexamine the the Chew-Frautshi plot for the $I=1$ amplitude using this trajectory, why is the resulting spectrum problematic? Try a real but non-linear trajectory, say $\alpha(s) = \alpha_0 + \alpha^\prime \, s + \alpha^{\prime\prime} \, s^2$, what is the spectrum like now?
@@ -79,4 +119,15 @@ where $\alpha(s) = \alpha(0) + \alpha^\prime s$ is a real, linear Regge trajecto
           \end{equation}
           %%
           What is a possible microscopic picture of hadrons if the Veneziano amplitude is believed?
+
+          \begin{solution}
+              If we allow $\alpha(t)$ to be complex, then at a pole $\alpha(s) \to J + i \Gamma$ and the residue we calculated
+              \begin{equation}
+                  \frac{\Gamma(J+i \,\Gamma + \alpha(t))}{\Gamma(\alpha(t))} ~,
+              \end{equation}
+              is no longer a fixed order polynomial in $t$. It will thus give contributions to ALL spins at each pole, i.e. introduce an infinite number of ancestors. Similarly if $\alpha(s)$ is non-linear, we will have finitely many ancestors but still unphysical poles nonetheless.
+
+              This means the Veneziano amplitude \textit{only} gives a physical picture for real and linear trajectories. This means we require $J \propto s \sim m^2$ which mimics the spectrum of states in a relativistic rotating string. This gives rise to the stringy picture of a $q\bar{q}$ pair connected by a gluon flux tube and later the entire field of string theories.
+          \end{solution}
+
 \end{enumerate}

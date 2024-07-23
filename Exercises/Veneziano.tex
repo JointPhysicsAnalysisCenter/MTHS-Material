@@ -2,7 +2,7 @@ The quintessential dual amplitude was first proposed by Veneziano for $\omega\to
 %%
     \begin{equation}
         \label{eq:Astu}
-        \mathcal{A}(s,t,u) = V(s,t) + V(s,u) + V(t,u) ~.
+        \mathcal{A}(s,t,u) = V(s,t) + V(s,u) - V(t,u) ~.
     \end{equation}
 %%
 with each 
@@ -24,7 +24,7 @@ Show that the function $V(s,t)$ is symmetric in $s\leftrightarrow t$ and dual, i
 and use the identities $B(x,y) = B(y,x)$ and
 %%
     \begin{equation}
-        B(p-x, q-y) = \sum_{J=1}^\infty \, \frac{\Gamma(J-p+x)}{\Gamma(J) \, \Gamma(-p + 1 +x)} \, \frac{1}{J-1+q-y} ~.
+        B(p-x, q-y) = \sum_{J=1}^\infty \, \frac{\Gamma(J-p+1 +x)}{\Gamma(J) \, \Gamma(-p + 1 +x)} \, \frac{1}{J-1+q-y} ~.
     \end{equation}
 %%
 }
@@ -39,7 +39,7 @@ Define the $s$-channel isospin basis through
             \mathcal{A}^{(2)}(s,t,u)             
         \end{pmatrix}
         = 
-        \begin{pmatrix}
+        \frac{1}{2}\begin{pmatrix}
             3 & 1 & 1 \\
             0 & 1 & -1 \\
             0 & 1 & 1 
@@ -55,10 +55,10 @@ Define the $s$-channel isospin basis through
 Write down the definite-isospin amplitudes in terms of $V$'s. Comment on the symmetry properties of each isospin amplitude with respect to $t \leftrightarrow u$. 
 
 \subsection{Chew-Frautshi plot}
-Locate where each $\mathcal{A}^{(I)}(s,t,u)$ will have poles in the $s$-channel physical region. Draw a schematic Chew-Frautschi plot of the resonance spectrum in each isospin channel.
+Locate where each $\mathcal{A}^{(I)}(s,t,u)$ will have poles in the $s$-channel physical region. What is their residue? Draw a schematic Chew-Frautschi plot of the resonance spectrum in each isospin channel.
 
 \subsection{Regge limit}
-Now consider the limit $s \to \infty$ and $u \to - \infty$ with $t \leq 0$ is fixed. What is the behavior of $V(s,t)$ and $V(s,u)$ in this limit? Do the same for $V(t,u)$ additionally assuming that $\alpha(s)$ is complex with $\Im\alpha(s) /\log s \to \infty$ asymptotically. What is the resulting behavior of the isospin amplitudes $\mathcal{A}^{(I)}(s,t,u)$ in this limit?
+Now consider the limit $t \to \infty$ and $u \to - \infty$ with $s \leq 0$ is fixed. What is the asymptotic behavior of $V(s,t)$ and $V(s,u)$? Assume that $V(t,u)$ vanishes faster than any power of $s$ in this limit. What is the resulting behavior of the isospin amplitudes $\mathcal{A}^{(I)}(s,t,u)$ in this limit?
 
 \noindent \textit{ Hint: Use the Sterling approximation of the $\Gamma$ function., i.e. as $|x|\to \infty$
     \begin{equation}
@@ -67,7 +67,7 @@ Now consider the limit $s \to \infty$ and $u \to - \infty$ with $t \leq 0$ is fi
 }
 
 \subsection{Ancestors and Strings}
-Consider the model now with a complex trajectory $\alpha(s) = a_0 + \alpha^\prime \, s + i \gamma \sqrt{s-s_\text{th}}$ with $\gamma >0$ to move the poles off the real axis. Reexamine the the Chew-Frautshi plot for the $I=1$ amplitude using this trajectory, why is the resulting spectrum problematic? Try a real but non-linear trajectory, say $\alpha(s) = \alpha_0 + \alpha^\prime \, s + \alpha^{\prime\prime} \, s^2$, what is the spectrum like now?
+Consider the model now with a complex trajectory $\alpha(s) = a_0 + \alpha^\prime \, s + i \,\Gamma$ with $\Gamma > 0$ to move the poles off the real axis. Reexamine the the Chew-Frautshi plot for the $I=1$ amplitude using this trajectory, why is the resulting spectrum problematic? Try a real but non-linear trajectory, say $\alpha(s) = \alpha_0 + \alpha^\prime \, s + \alpha^{\prime\prime} \, s^2$, what is the spectrum like now?
 
 Compare the requirements of the trajectory for $V(s,t)$ to make sense with the energy levels of a rotating relativistic string with a string tension $T$:
 %%
@@ -75,4 +75,4 @@ Compare the requirements of the trajectory for $V(s,t)$ to make sense with the e
         E_J^2 = \frac{1}{2\pi \, T} \, J ~.
     \end{equation}
 %%
-What is a possible microscopic picture of hadrons in the Veneziano amplitude is believed? 
+What is a possible microscopic picture of hadrons if the Veneziano amplitude is believed? 

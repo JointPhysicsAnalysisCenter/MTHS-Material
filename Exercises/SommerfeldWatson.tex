@@ -1,0 +1,29 @@
+
+\subsection{Geometric series}
+
+Prove the well known resummation of the geometric series:
+%%
+    \begin{equation}
+         1 + x + x^2 + x^3 + \dots =  \frac{1}{1-x} \quad \text{for } |x| < 1
+    \end{equation}
+%%
+can be analytically continued to $|x| \geq 1$ with the Sommerfeld-Watson Transform.
+
+Assume that $|x| > 1$ and show that the summation can be written as an integral over the complex plane
+%%
+    \begin{equation}
+        \label{eq:SW_1}
+         \int \frac{d\ell}{2i} \frac{(-x)^\ell}{\sin \pi \ell} = 1 + x + x^2 + \dots ~.
+    \end{equation}
+%%
+Draw the contour around which the above integration should be taken (careful with orientations and signs).
+Deform the contour such that you can relate \cref{eq:SW_1} to the series
+%%
+    \begin{equation}
+        \frac{1}{x} + \frac{1}{x^2} + \frac{1}{x^3} + \dots = \frac{1}{1- \frac{1}{x}}
+    \end{equation}
+%%
+and arrive at \cref{eq:SW_1}.
+
+\subsection{Van Hove Reggeon}
+Revisit the Regge behavior of \cref{eq:vanhove} using the S-W transform. How does the inclusion of poles at $\alpha(s) = \ell$ change the contour of integration?

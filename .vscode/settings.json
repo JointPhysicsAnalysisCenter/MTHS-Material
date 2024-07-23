@@ -1,42 +1,30 @@
 {
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "Build Sheet",
-            "tools": [
-                "make_sheet"
-            ]
-        },
-        {
-            "name": "Build Solution",
-            "tools": [
-                "make_sheet_sol"
-            ]
-        }
-    ],
-    "latex-workshop.latex.tools": [
-        {
-            "name": "make_sheet",
-            "command": "bash",
-            "args": [
-                "-c",
-                "cd ../ && make Compiled/%DOCFILE%.pdf"
-            ]
-        },
-        {
-            "name": "make_sheet_sol",
-            "command": "bash",
-            "args": [
-                "-c",
-                "cd ../ && make Compiled/%DOCFILE%_sol.pdf"
-            ]
-        }
-    ],
-    "latex-workshop.latex.outDir": "../Compiled",
-    "latex-workshop.latex.clean": {
-        "command": "bash",
-        "args": [
-            "-c",
-            "rm -r ../workdir_%DOCFILE%"
-        ]
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Build Sheet",
+      "tools": ["make_sheet"]
     },
+    {
+      "name": "Build Solution",
+      "tools": ["make_sheet_sol"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "make_sheet",
+      "command": "bash",
+      "args": ["-c", "cd ../ && make Compiled/%DOCFILE%.pdf"]
+    },
+    {
+      "name": "make_sheet_sol",
+      "command": "bash",
+      "args": ["-c", "cd ../ && make Compiled/%DOCFILE%_sol.pdf"]
+    }
+  ],
+  "latex-workshop.latex.outDir": "../Compiled",
+  "latex-workshop.latex.clean": {
+    "command": "bash",
+    "args": ["-c", "rm -r ../workdir_%DOCFILE%"]
+  },
+  "cSpell.words": ["Unitarity"]
 }

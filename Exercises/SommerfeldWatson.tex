@@ -1,30 +1,68 @@
 
 \begin{enumerate}
-\item \textbf{Geometric series} \\
-Prove the well known resummation of the geometric series:
-%%
-    \begin{equation}\label{eq:SW_0}
-         1 + x + x^2 + x^3 + \dots =  \frac{1}{1-x} \quad \text{for } |x| < 1
-    \end{equation}
-%%
-can be analytically continued to $|x| \geq 1$ with the Sommerfeld-Watson Transform.
+    \item \textbf{Geometric series} \\
+          Prove the well known resummation of the geometric series:
+          %%
+          \begin{equation}\label{eq:SW_0}
+              1 + x + x^2 + x^3 + \dots =  \frac{1}{1-x} \quad \text{for } |x| < 1
+          \end{equation}
+          %%
+          can be analytically continued to $|x| \geq 1$ with the Sommerfeld-Watson Transform.
 
-Assume that $|x| > 1$ and show that the summation can be written as an integral over the complex plane
-%%
-    \begin{equation}
-        \label{eq:SW_1}
-         \int \frac{d\ell}{2i} \frac{(-x)^\ell}{\sin \pi \ell} = 1 + x + x^2 + \dots ~.
-    \end{equation}
-%%
-Draw the contour around which the above integration should be taken (careful with orientations and signs).
-Deform the contour such that you can relate Eq.~\ref{eq:SW_1} to the series
-%%
-    \begin{equation}
-        \frac{1}{x} + \frac{1}{x^2} + \frac{1}{x^3} + \dots = \frac{1}{1- \frac{1}{x}}
-    \end{equation}
-%%
-and arrive at Eq.~\ref{eq:SW_0}.
+          Assume that $|x| > 1$ and show that the summation can be written as an integral over the complex plane
+          %%
+          \begin{equation}
+              \label{eq:SW_1}
+              \int \frac{d\ell}{2i} \frac{(-x)^\ell}{\sin \pi \ell} = 1 + x + x^2 + \dots ~.
+          \end{equation}
+          %%
+          Draw the contour around which the above integration should be taken (careful with orientations and signs).
+          Deform the contour such that you can relate Eq.~\ref{eq:SW_1} to the series
+          %%
+          \begin{equation}
+              \frac{1}{x} + \frac{1}{x^2} + \frac{1}{x^3} + \dots = \frac{1}{1- \frac{1}{x}}
+          \end{equation}
+          %%
+          and arrive at Eq.~\ref{eq:SW_0}.
 
-\item \textbf{Van Hove Reggeon} \\
-Revisit the Regge behavior of Eq.~\ref{eq:vanhove} using the S-W transform. How does the inclusion of poles at $\alpha(s) = \ell$ change the contour of integration and the leading contribution to the asymptotic behavior?
+          \begin{solution}
+              We want to show that we can analytically continue the geometric series to $|x|>1$ using the Sommerfeld-Watson Transform.
+
+              First, we will prove that the sum can be written as an integral over the complex plane:
+              \begin{equation}
+                  \int_C\frac{d\ell}{2i}\frac{(-x)^\ell}{\sin\pi\ell} \ ,
+              \end{equation}
+              where the function $1/\sin\pi\ell$ has poles at integer values of $\ell=\ldots, -2,-1,0,1,2,\ldots$
+              We use the Cauchy Residue Theorem:
+              \begin{equation}
+                  \oint f(z) dz = \pm 2\pi i \sum_{k}\textrm{Res}_{z=z_k}f(z) \ ,
+              \end{equation}
+              with sign $+$ for a counterclockwise contour and $-$ for a clockwise contour around the pole at $z_k$.
+              The residue of $f(\ell)=(-x)^\ell/\sin\pi\ell$ at $\ell=k$ is given by
+              \begin{equation}
+                  \textrm{Res}_{\ell=k}\frac{(-x)^\ell}{\sin\pi\ell}=\lim_{\ell\to k}(\ell-k)\frac{(-x)^\ell}{\sin\pi\ell}=\lim_{\ell\to k}\frac{(-x)^\ell}{\pi\cos\pi\ell}=\frac{x^k}{\pi}
+              \end{equation}
+              Therefore, if we encircle all the poles at $\ell=k$ for $k\geq 0$ with counterclockwise contours $C_k$, which we can combine to a single counterclockwise contour $C$ encircling all the poles at $0$ and positive integers, we obtain the geometric series:
+              \begin{equation}
+                  \sum_{k=0}^\infty\int_{C_k}\frac{d\ell}{2i}\frac{(-x)^\ell}{\sin\pi\ell}=\int_C\frac{d\ell}{2i}\frac{(-x)^\ell}{\sin\pi\ell}=\sum_{k=0}^\infty x^k=1+x+x^2+\cdots
+              \end{equation}
+
+              Next, we deform the contour to a vertical line from $\sigma+i\infty$ to $\sigma-i\infty$, with $-1<\sigma<0$, and further deform it to enclose all negative integers in a clockwise contour $C'$, that we can split in individual clockwise contours $C_{k'}$:
+              \begin{align}
+                  \int_{C'}\frac{d\ell}{2i}\frac{(-x)^\ell}{\sin\pi\ell} & =\sum_{C_{k'}}\int_{C_{k'}}\frac{d\ell}{2i}\frac{(-x)^\ell}{\sin\pi\ell}=-\frac{1}{x}-\frac{1}{x^2}-\frac{1}{x^3}-\cdots \\
+                                                                         & =-\frac{1}{x}\left(1+\frac{1}{x}+\frac{1}{x^2}+\cdots\right)    \nonumber
+              \end{align}
+              and given the assumption $|x|>0$, we have $|1/x|<1$, and we can sum the geometric series:
+              \begin{equation}
+                  -\frac{1}{x}\left(1+\frac{1}{x}+\frac{1}{x^2}+\cdots\right)    = -\frac{1}{x}\frac{1}{1-\frac{1}{x}}=\frac{1}{1-x} \ .
+              \end{equation}
+          \end{solution}
+
+    \item \textbf{Van Hove Reggeon} \\
+          Revisit the Regge behavior of Eq.~\ref{eq:vanhove} using the S-W transform. How does the inclusion of poles at $\alpha(s) = \ell$ change the contour of integration and the leading contribution to the asymptotic behavior?
+
+          \begin{solution}
+              If we include a Regge pole $[\ell-\alpha(t)]^{-1}$, in the process of deforming the contour from $C$ to $C'$ we have to pick the residue of the pole at $\ell=\alpha(t)$, with $\textrm{Re}\,\alpha(t)<0$. This means we have an extra clockwise contour $C_\alpha$, from which we obtain an extra contribution $\propto x^{\alpha(t)}$. Since $x \sim q_t^2 \, z_t \sim s$ this yields the $s^{\alpha(t)}$ behavior.
+          \end{solution}
+
 \end{enumerate}

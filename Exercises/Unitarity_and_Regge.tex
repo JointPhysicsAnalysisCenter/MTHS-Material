@@ -1,6 +1,8 @@
 Van Hove proposed a physically intuitive picture of a Reggeon by relating it to Feynman diagrams in the cross-channels. We will explore this picture of Reggeization with a simple model.
 
-\subsection{Elementary $t$-channel exchanges}
+\begin{enumerate}
+
+\item \textbf{Elementary $t$-channel exchanges} \\
 Consider the amplitude corresponding to a particle with spin-$J$ and mass $m_J$  exchanged in the $t$-channel as:
 %%
     \begin{equation}   
@@ -28,15 +30,14 @@ and conjecture a generalization of the amplitude for arbitrary integer $J$.
 
 \noindent\textit{Hint: Show that in the $t$-channel frame, the exchange particle is at rest and therefore $\tilde{g}_{\mu\nu}$ reduces to a $\delta_{ij}$ with respect to only spacial momenta.} 
 
-\subsection{Unitarity vs Elementary exchanges}
+\item {Unitarity vs Elementary exchanges} \\
 Express the amplitude entirely in terms of invariants $s$ and $t$. Use the optical theorem to relate the elastic amplitude to a total hadronic cross section:
 \begin{equation}
     \sigma_\text{tot} = \frac{1}{2q\sqrt{s}} \, \Im A^J(s,t=0)~.
 \end{equation}
 Unitarity (via the Froissart-Martin bound) prohibits $\sigma_\text{tot}$ from growing faster than $\log^2 s$ as $s\to\infty$~. What is then the maximal spin a single elementary exchange can have while satisfying this bound? Why is this a problem?
 
-\subsection{Van Hove Reggeon} 
-
+\item \textbf{Van Hove Reggeon} \\
 Consider an amplitude of the form 
 %%
     \begin{equation}
@@ -45,12 +46,12 @@ Consider an amplitude of the form
     \end{equation}
 %%
 Here $\alpha(t) = \alpha(0) + \alpha^\prime \, t$ is a real, linear Regge trajectory, $g$ is a dimensionless coupling constant and $r \sim 1$ fm is a range parameter. 
-Compare \cref{eq:vanhove} with \cref{eq:AJ}, write the mass of the $J$th pole, $m_J^2$, as a function of the Regge parameters $\alpha(0)$ and $\alpha^\prime$. Interpret the pole structure in terms of the spectrum of particles in the model. 
+Compare Eq.~\ref{eq:vanhove} with Eq.~\ref{eq:AJ}, write the mass of the $J$th pole, $m_J^2$, as a function of the Regge parameters $\alpha(0)$ and $\alpha^\prime$. Interpret the pole structure in terms of the spectrum of particles in the model. 
 \\
 
 \noindent If the sum is truncated to a finite $J_\text{max}$, and we take the $s\to \infty$ limit, what is the high energy behavior of the amplitude? 
 
-\subsection{Analytic continuation in $J$}
+\item \textbf{Analytic continuation in $J$} \\
 Show that if the summation is kept infinite, the amplitude can be re-summed to something that is entirely analytic in $s$, $t$, $u$, and $J$. 
 
 \noindent \textit{Hint: Use the Mellin transform
@@ -66,7 +67,7 @@ to express the amplitude in terms of the Gaussian hypergeometric function and th
     \end{equation}
 %%
 }
-\subsection{Unitarity vs Reggeized exchanges}
+\item \textbf{Unitarity vs Reggeized exchanges} \\
 Revisit $\mathbf{b)}$ with the resummed amplitude. Take the $s\to\infty$ limit and set a limit on the maximal intercept $\alpha(0)$ which is allowed by unitarity.  
 
 \noindent \textit{Hint: Assume that $\alpha(0) > -1$ and use the asymptotic behavior of the hypergeometric function given by 
@@ -77,8 +78,8 @@ Revisit $\mathbf{b)}$ with the resummed amplitude. Take the $s\to\infty$ limit a
 %%
 }
 
-\subsection{The Reggeon ``propagator"}
-Modify \cref{eq:AJ} to have a definite signature by defining
+\item \textbf{The Reggeon ``propagator"} \\
+Modify Eq.~\ref{eq:AJ} to have a definite signature by defining
 %%
     \begin{equation}
         A^{\pm}(s,t) = \frac{1}{2}\left[A(s,t) \pm A(u,t) \right]~.
@@ -91,3 +92,5 @@ Repeat $\textbf{d)}$ and  $\textbf{e)}$ with this signatured amplitude. Compare 
     \end{equation}
 %%
 Identify the Regge residue $\beta(t)$ and characteristic scale $s_0$ in terms of the parameters $g_0$ and $r$. 
+
+\end{enumerate}

@@ -1,0 +1,96 @@
+Van Hove proposed a physically intuitive picture of a Reggeon by relating it to Feynman diagrams in the cross-channels. We will explore this picture of Reggeization with a simple model.
+
+\begin{enumerate}
+
+\item \textbf{Elementary $t$-channel exchanges} \\
+Consider the amplitude corresponding to a particle with spin-$J$ and mass $m_J$  exchanged in the $t$-channel as:
+%%
+    \begin{equation}   
+        \label{eq:AJ}
+        A^J(s,t) = i \, g_J \, \left( q_1^{\mu_1} \dots q_1^{\mu_J} \right) \frac{P^J_{\mu_1\dots\mu_J,\nu_1\dots\nu_J}(k)}{m_J^2 - t} \left( q_{\bar{2}}^{\nu_1} \dots q_{\bar{2}}^{\nu_J} \right) 
+    \end{equation}
+%%
+where $g_J$ is a coupling constant with dimension $2-2J$ (i.e., $A^J(s,t)$ is dimensionless) and the projector of spin-$J$ is defined from the polarization tensor of rank-$J\geq1$ as
+%%
+    \begin{equation}
+        P^J_{\mu_1\dots\mu_J,\nu_1\dots\nu_J}(k) = \frac{(J+1)}{2} \, \sum_{\lambda} 
+         \epsilon^{\mu_1\dots\mu_J}(k,\lambda) \, \epsilon^{*\nu_1\dots\nu_J}(k,\lambda) ~.
+    \end{equation}
+%%
+
+Using the exchange momentum $k = q_1 + q_{\bar{3}} = q_1 - q_3$, calculate the amplitudes corresponding to $J=0,1,2$ exchanges in terms of $t= k^2$, the modulus of 3-momentum and cosine of scattering angle in the $t$-channel frame, $q_t$ and $\cos\theta_t$ respectively. Use the explicit forms of the projectors:
+%%
+    \begin{gather}
+        P^0(k^2) = 1 \\
+        P^1_{\mu\nu}(k^2) \equiv \tilde{g}_{\mu\nu} =   \frac{ k_\mu \, k_\nu}{ k^2} - g_{\mu\nu}\\ 
+        P^2_{\mu\nu\alpha\beta}(k^2) = \frac{3}{4}\left(\tilde{g}_{\mu\alpha} \, \tilde{g}_{\nu\beta} + \tilde{g}_{\mu\beta} \, \tilde{g}_{\nu\alpha}\right) - \frac{1}{2} \, \tilde{g}_{\mu\nu} \, \tilde{g}_{\alpha\beta} ~,
+    \end{gather}
+%%
+and conjecture a generalization of the amplitude for arbitrary integer $J$. 
+
+\noindent\textit{Hint: Show that in the $t$-channel frame, the exchange particle is at rest and therefore $\tilde{g}_{\mu\nu}$ reduces to a $\delta_{ij}$ with respect to only spacial momenta.} 
+
+\item \textbf{Unitarity vs Elementary exchanges} \\
+Express the amplitude entirely in terms of invariants $s$ and $t$. Use the optical theorem to relate the elastic amplitude to a total hadronic cross section:
+\begin{equation}
+    \sigma_\text{tot} = \frac{1}{2q\sqrt{s}} \, \Im A^J(s,t=0)~.
+\end{equation}
+Unitarity (via the Froissart-Martin bound) prohibits $\sigma_\text{tot}$ from growing faster than $\log^2 s$ as $s\to\infty$~. What is then the maximal spin a single elementary exchange can have while satisfying this bound? Why is this a problem?
+
+\item \textbf{Van Hove Reggeon} \\
+Consider an amplitude of the form 
+%%
+    \begin{equation}
+        \label{eq:vanhove}
+        A(s,t) = \sum_{J=0}^\infty g \, r^{2J} \, \frac{ (q_t^2 \, \cos\theta_t)^J}{J- \alpha(t)} ~.
+    \end{equation}
+%%
+Here $\alpha(t) = \alpha(0) + \alpha^\prime \, t$ is a real, linear Regge trajectory, $g$ is a dimensionless coupling constant and $r \sim 1$ fm is a range parameter. 
+Compare Eq.~\ref{eq:vanhove} with Eq.~\ref{eq:AJ}, write the mass of the $J$th pole, $m_J^2$, as a function of the Regge parameters $\alpha(0)$ and $\alpha^\prime$. Interpret the pole structure in terms of the spectrum of particles in the model. 
+\\
+
+\noindent If the sum is truncated to a finite $J_\text{max}$, and we take the $s\to \infty$ limit, what is the high energy behavior of the amplitude? 
+
+\item \textbf{Analytic continuation in $J$} \\
+Show that if the summation is kept infinite, the amplitude can be re-summed to something that is entirely analytic in $s$, $t$, $u$, and $J$. 
+
+\noindent \textit{Hint: Use the Mellin transform
+%%
+    \begin{equation}
+        \frac{1}{J-\alpha(t)} = \int_0^1 dx \, x^{J-\alpha(t) - 1} ~,
+    \end{equation}
+%%
+to express the amplitude in terms of the Gaussian hypergeometric function and the Euler Beta function
+%%
+    \begin{equation}
+        B(b, c-b) \, _2F_1(1, b, c; z) =  \int_0^1 dx \, \frac{ x^{b-1} \, (1-x)^{c-b-1}}{1-x \, z} ~. 
+    \end{equation}
+%%
+}
+\item \textbf{Unitarity vs Reggeized exchanges} \\
+Revisit $\mathbf{b)}$ with the resummed amplitude. Take the $s\to\infty$ limit and set a limit on the maximal intercept $\alpha(0)$ which is allowed by unitarity.  
+
+\noindent \textit{Hint: Assume that $\alpha(0) > -1$ and use the asymptotic behavior of the hypergeometric function given by 
+%%
+    \begin{equation}
+        _2F_1(1,b,c;z) \to \frac{\Gamma(c)\,\Gamma(1-b)}{\Gamma(1) \,\Gamma(c-b)} \, (-z)^{-b}  ~.
+    \end{equation}
+%%
+}
+
+\item \textbf{The Reggeon ``propagator"} \\
+Modify Eq.~\ref{eq:AJ} to have a definite signature by defining
+%%
+    \begin{equation}
+        A^{\pm}(s,t) = \frac{1}{2}\left[A(s,t) \pm A(u,t) \right]~.
+    \end{equation}
+%%
+Repeat $\textbf{d)}$ and  $\textbf{e)}$ with this signatured amplitude. Compare with the canonical form of the Reggeon exchange:
+%%
+    \begin{equation}
+        A^\pm_\mathbb{R}(s,t) = \beta(t) \, \frac{1}{2}\left[\pm1 + e^{-i\pi\alpha(t)}\right] \, \Gamma(-\alpha(t)) \, \left(\frac{s}{s_0}\right)^{\alpha(t)} ~.
+    \end{equation}
+%%
+Identify the Regge residue $\beta(t)$ and characteristic scale $s_0$ in terms of the parameters $g_0$ and $r$. 
+
+\end{enumerate}

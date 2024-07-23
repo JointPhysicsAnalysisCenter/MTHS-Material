@@ -30,6 +30,29 @@ Van Hove proposed a physically intuitive picture of a Reggeon by relating it to 
           \noindent\textit{Hint: Show that in the $t$-channel frame, the exchange particle is at rest and therefore $\tilde{g}_{\mu\nu}$ reduces to a $\delta_{ij}$ with respect to only spacial momenta.}
 
           \begin{solution}
+
+              \noindent We start by considering the elastic scattering of two identical, spinless particles with 4-momentum $q_{i}$ and with mass $q_i^2 = m^2$.
+              We define the usual Mandelstam variables
+              %%
+              \begin{gather}
+                  s = (q_1 + q_2)^2 = (q_3 + q_4)^2 \nonumber\\
+                  t = (q_1 - q_3)^2 = (q_4 - q_2)^2 \nonumber \\
+                  u = (q_1 - q_4)^2 = (q_2 - q_3)^2 \nonumber
+              \end{gather}
+              %%
+              We refer to the $s$-channel as the physical region describing the process
+              %%
+              \begin{equation}
+                  1 \, (q_1) + 2 \, (q_2) \to 3 \, (q_3) + 4 \, (q_4) ~, \nonumber
+              \end{equation}
+              %%
+              while in the $t$-channel we consider
+              \begin{equation}
+                  1 \, (q_1) + \bar{3} \, (q_{\bar{3}})
+                  \to  \bar{2} \, (q_{\bar{2}}) + 4 \, (q_4) ~. \nonumber
+              \end{equation}
+              %%
+
               The $J=0$ is trivial
               \begin{equation}
                   A^0(s,t) = i \, g_0 \, \frac{1}{m_0^2 - t} = i \, g_0 \, \frac{P_0(\cos\theta_t)}{m_0^2 - t} ~.
@@ -218,22 +241,6 @@ Van Hove proposed a physically intuitive picture of a Reggeon by relating it to 
               \end{equation}
               %%
               and we can read off $\beta(t) = g_0 \, \Gamma(1+\alpha(t))$. Using $s \sim -u$ we also see $s_0 = 2 \, r^{-2}$
-
-              \section{Veneziano Amplitude}
-              \subsection{Duality}
-              We can write:
-              %%
-              \begin{equation}
-                  V(s,t) = (1-\alpha(s) - \alpha(t)) \, B(1-\alpha(s), 1-\alpha(t)) ~.
-              \end{equation}
-              %%
-              Then using the expansion of the Beta function on its first argument, we have
-              %%
-              \begin{equation}
-                  V(s,t) = (1-\alpha(s) - \alpha(t)) \, \sum_{J=1}^\infty \, \frac{\Gamma(J-1+\alpha(t))}{\Gamma(J) \, \Gamma(\alpha(t))} \, \frac{1}{J-\alpha(s)}
-              \end{equation}
-              %%
-              which only has poles in $\alpha(s)$. Because of the $s\leftrightarrow t$ symmetry, we can write the exact same expression with only poles in $\alpha(t)$.
           \end{solution}
 
 \end{enumerate}

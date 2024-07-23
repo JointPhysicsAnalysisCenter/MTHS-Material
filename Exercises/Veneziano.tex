@@ -30,6 +30,22 @@ where $\alpha(s) = \alpha(0) + \alpha^\prime s$ is a real, linear Regge trajecto
               %%
           }
 
+          \begin{solution}
+              We can write:
+              %%
+              \begin{equation}
+                  V(s,t) = (1-\alpha(s) - \alpha(t)) \, B(1-\alpha(s), 1-\alpha(t)) ~.
+              \end{equation}
+              %%
+              Then using the expansion of the Beta function on its first argument, we have
+              %%
+              \begin{equation}
+                  V(s,t) = (1-\alpha(s) - \alpha(t)) \, \sum_{J=1}^\infty \, \frac{\Gamma(J-1+\alpha(t))}{\Gamma(J) \, \Gamma(\alpha(t))} \, \frac{1}{J-\alpha(s)}
+              \end{equation}
+              %%
+              which only has poles in $\alpha(s)$. Because of the $s\leftrightarrow t$ symmetry, we can write the exact same expression with only poles in $\alpha(t)$.
+          \end{solution}
+
     \item \textbf{Isospin basis} \\
           Define the $s$-channel isospin basis through
           %%

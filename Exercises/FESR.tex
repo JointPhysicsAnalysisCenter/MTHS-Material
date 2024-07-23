@@ -1,9 +1,39 @@
 
 Consider $z$ a complex variable and $\alpha$ a real fixed parameter. What is the analytic structure of the function $z^\alpha$? What is the discontinuity across the cut?
 
-Write a Cauchy contour $C$ surrounding the cut and closing it with a circle of radius $\Lambda$ in the complex $z$ plane, and check that 
+Write a Cauchy contour $C$ surrounding the cut and closing it with a circle of radius $\Lambda$ in the complex $z$ plane, and check that
 \begin{align}
     \oint_{C} z^\alpha \mathrm d z & = 0
 \end{align}
 
-You can start with the simple case $\alpha = 1/2$, {\it i.e.} $\sqrt{z}$, then generalize to any real $\alpha$. 
+You can start with the simple case $\alpha = 1/2$, {\it i.e.} $\sqrt{z}$, then generalize to any real $\alpha$.
+
+\begin{solution}
+    The function $z^\alpha$ has a branch cut for $z\in [-\infty, 0]$. The Cauchy contour enclose the cut and the discontinuity across that cut is
+    \begin{align}
+        (z+i\epsilon)^\alpha - (z-i\epsilon)^\alpha & =  (|z| e^{i \pi})^\alpha- (|z| e^{-i \pi})^\alpha              & \text{for real negative} z
+        \\
+                                                    & = |z|^\alpha \left( e^{i\pi \alpha} - e^{-i\pi \alpha}  \right)
+        \\
+                                                    & = 2 i |z|^\alpha \sin \pi \alpha
+    \end{align}
+    The Cauchy contour is then, with $C_\Lambda$ being the circle of radius $\Lambda$ in the positive sense,
+    \begin{align}
+        \oint z^\alpha \mathrm d z & = \int_{-\Lambda}^0 (z+i \epsilon)^\alpha \mathrm d z + \int^{-\Lambda}_0 (z-i \epsilon)^\alpha \mathrm d z + \oint_{C_\Lambda} z^\alpha \mathrm d z
+        \\
+                                   & = 2i \sin \pi \alpha \int_{-\Lambda}^0 |z|^\alpha \mathrm d z + \oint_{C_\Lambda} z^\alpha \mathrm d z
+    \end{align}
+    The first integral is easily done
+    \begin{align}
+        2i \sin \pi \alpha \int_{-\Lambda}^0 |z|^\alpha \mathrm d z & = \frac{2i \Lambda^{\alpha+1}}{\alpha+1} \sin \pi \alpha.
+    \end{align}
+    For the second integral, we need the change of variable $z = \Lambda \exp(i \theta)$, with $\theta \in [-\pi,\pi]$. We obtain
+    \begin{align}
+        \oint_{C_\Lambda} z^\alpha \mathrm d z & =
+        i\Lambda^{\alpha+1} \int_{-\pi}^\pi e^{i \theta(\alpha+1)} \mathrm d \theta =  \frac{i\Lambda^{\alpha+1}}{\alpha+1}
+        \left(e^{i \pi(\alpha+1)} -e^{-i \pi(\alpha+1)} \right)
+        \\
+                                               & = - \frac{2i \Lambda^{\alpha+1}}{\alpha+1} \sin \pi \alpha
+    \end{align}
+    We used $\exp(i\pi) = -1$.
+\end{solution}
